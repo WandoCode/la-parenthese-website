@@ -196,20 +196,95 @@ a:hover, a:active, a:focus, a:focus-within {
   text-decoration: underline;
 }
 
+@font-face {
+  font-family: "Amaranth";
+  src: url("/public/fonts/Amaranth-Regular.woff2") format("woff2"), url("/public/fonts/Amaranth-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arsenal";
+  src: url("/public/fonts/Arsenal-Bold.woff2") format("woff2"), url("/public/fonts/Arsenal-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arsenal";
+  src: url("/public/fonts/Arsenal-BoldItalic.woff2") format("woff2"), url("/public/fonts/Arsenal-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arsenal";
+  src: url("/public/fonts/Arsenal-Regular.woff2") format("woff2"), url("/public/fonts/Arsenal-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Arsenal";
+  src: url("/public/fonts/Arsenal-Italic.woff2") format("woff2"), url("/public/fonts/Arsenal-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
 /**
  * Basic typography style for copy text
  */
 body {
   color: var(--clr-primary-900);
-  font-family: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Arsenal", sans-serif;
   font-size: var(--fs-sm-300);
 }
 
-.nav__link {
+.nav a {
   color: var(--clr-primary-600);
+  font-family: "Amaranth", sans-serif;
 }
-.nav__link.current {
+.nav a.current {
   color: var(--clr-primary-400);
+}
+
+.header {
+  position: fixed;
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  background-color: white;
+}
+.header #open-menu-btn,
+.header #close-menu-btn {
+  justify-self: end;
+  color: var(--clr-primary-300);
+  background-color: transparent;
+  border: none;
+}
+.header__first {
+  display: grid;
+  justify-items: center;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+}
+.header__nav {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  padding-block: 3.125rem;
+  gap: 3.125rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  translate: 0 -150%;
+  z-index: 0;
+  background-color: gray;
+  transition: 0.75s;
+}
+.header .show-menu {
+  translate: 0 0;
 }
 
 .button {
@@ -218,7 +293,8 @@ body {
 
 .nav__list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 30px;
 }
 
@@ -278,4 +354,8 @@ body {
   .show-desktop {
     display: block;
   }
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
