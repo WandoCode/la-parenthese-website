@@ -1,36 +1,48 @@
 :root {
-  --clr-primary-200: hsl(192, 70%, 51%);
-  --clr-primary-300: hsl(136, 65%, 51%);
-  --clr-primary-800: hsl(233, 26%, 24%);
+  --clr-primary-400: hsl(183, 70%, 36%);
+  --clr-primary-600: hsl(183, 84%, 17%);
+  --clr-primary-700: hsl(183, 45%, 16%);
+  --clr-primary-800: hsl(183, 44%, 11%);
+  --clr-primary-900: hsl(183, 43%, 11%);
+  --clr-secondary-400: hsl(24, 100%, 31%);
+  --clr-secondary-800: hsl(24, 84%, 17%);
+  --clr-secondary-850: hsl(24, 100%, 15%);
   --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-200: hsl(0, 0%, 98%);
-  --clr-neutral-300: hsl(220, 16%, 96%);
-  --clr-neutral-400: hsl(233, 8%, 62%);
-  --clr-neutral-800: #0f2627;
+  --clr-neutral-200: #f9f6ef;
+  --clr-neutral-300: #e9f2ff;
 }
-:root .fc-primary-200 {
-  color: hsl(192, 70%, 51%);
+:root .fc-primary-400 {
+  color: hsl(183, 70%, 36%);
 }
-:root .fc-primary-300 {
-  color: hsl(136, 65%, 51%);
+:root .fc-primary-600 {
+  color: hsl(183, 84%, 17%);
+}
+:root .fc-primary-700 {
+  color: hsl(183, 45%, 16%);
 }
 :root .fc-primary-800 {
-  color: hsl(233, 26%, 24%);
+  color: hsl(183, 44%, 11%);
+}
+:root .fc-primary-900 {
+  color: hsl(183, 43%, 11%);
+}
+:root .fc-secondary-400 {
+  color: hsl(24, 100%, 31%);
+}
+:root .fc-secondary-800 {
+  color: hsl(24, 84%, 17%);
+}
+:root .fc-secondary-850 {
+  color: hsl(24, 100%, 15%);
 }
 :root .fc-neutral-100 {
   color: hsl(0, 0%, 100%);
 }
 :root .fc-neutral-200 {
-  color: hsl(0, 0%, 98%);
+  color: #f9f6ef;
 }
 :root .fc-neutral-300 {
-  color: hsl(220, 16%, 96%);
-}
-:root .fc-neutral-400 {
-  color: hsl(233, 8%, 62%);
-}
-:root .fc-neutral-800 {
-  color: #0f2627;
+  color: #e9f2ff;
 }
 
 :root {
