@@ -4,7 +4,15 @@
 @use '../abstracts/' as *;
 
 body {
-  color: var(--clr-neutral-800);
+  color: var(--clr-primary-900);
   font-family: $text-font-stack;
   font-size: var(--fs-sm-300);
+}
+
+.nav__link {
+  color: var(--clr-primary-600);
+
+  &.current {
+    color: var(--clr-primary-400);
+  }
 }

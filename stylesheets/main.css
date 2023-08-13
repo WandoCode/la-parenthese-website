@@ -2,8 +2,8 @@
   --clr-primary-300: hsl(183, 35%, 52%);
   --clr-primary-400: hsl(183, 70%, 36%);
   --clr-primary-600: hsl(183, 84%, 17%);
-  --clr-primary-700: hsl(183, 45%, 16%);
-  --clr-primary-800: hsl(183, 44%, 11%);
+  --clr-primary-700: hsl(183, 46%, 16%);
+  --clr-primary-800: hsl(183, 43%, 11%);
   --clr-primary-900: hsl(183, 43%, 11%);
   --clr-secondary-400: hsl(24, 100%, 31%);
   --clr-secondary-800: hsl(24, 84%, 17%);
@@ -22,10 +22,10 @@
   color: hsl(183, 84%, 17%);
 }
 :root .fc-primary-700 {
-  color: hsl(183, 45%, 16%);
+  color: hsl(183, 46%, 16%);
 }
 :root .fc-primary-800 {
-  color: hsl(183, 44%, 11%);
+  color: hsl(183, 43%, 11%);
 }
 :root .fc-primary-900 {
   color: hsl(183, 43%, 11%);
@@ -200,13 +200,26 @@ a:hover, a:active, a:focus, a:focus-within {
  * Basic typography style for copy text
  */
 body {
-  color: var(--clr-neutral-800);
+  color: var(--clr-primary-900);
   font-family: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: var(--fs-sm-300);
 }
 
+.nav__link {
+  color: var(--clr-primary-600);
+}
+.nav__link.current {
+  color: var(--clr-primary-400);
+}
+
 .button {
   background-color: red;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
 /**

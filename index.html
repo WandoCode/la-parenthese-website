@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
+    <script src="./app.js" defer type="module"></script>
     <title>La Parenthèse Enchantée</title>
   </head>
   <body>
@@ -27,22 +28,22 @@
           </picture>
         </a>
       </div>
-      <nav class="header__nav" id="main-nav" aria-label="main">
-        <ul>
+      <nav class="header__nav nav" id="main-nav" aria-label="main">
+        <ul class="nav__list">
           <li>
-            <a href="/">Accueil</a>
+            <a class="nav__link" href="/">Accueil</a>
           </li>
           <li>
-            <a href="/massages.html">Les massages</a>
+            <a class="nav__link" href="/massages.html">Les massages</a>
           </li>
           <li>
-            <a href="/reservation.html">Réservation</a>
+            <a class="nav__link" href="/reservation.html">Réservation</a>
           </li>
           <li>
-            <a href="/about.html">Qui suis-je?</a>
+            <a class="nav__link" href="/about.html">Qui suis-je?</a>
           </li>
           <li>
-            <a href="/faq.html">Infos pratiques</a>
+            <a class="nav__link" href="/faq.html">Infos pratiques</a>
           </li>
         </ul>
       </nav>
@@ -83,7 +84,7 @@
       <div class="footer__top">
         <a
           lcass="logo"
-          href="/index.html"
+          href="/"
           aria-label="page d'accueil de La parenthèse enchantée"
         >
           <img
@@ -97,7 +98,7 @@
         <nav class="footer__nav" aria-label="secondary">
           <ul>
             <li>
-              <a href="/index.html">Accueil</a>
+              <a href="/">Accueil</a>
             </li>
             <li>
               <a href="/massages.html">Les massages</a>
