@@ -250,4 +250,19 @@ body {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+@media (min-width: 64rem) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.show-desktop {
+  display: none;
+}
+@media (min-width: 64rem) {
+  .show-desktop {
+    display: block;
+  }
 }/*# sourceMappingURL=main.css.map */

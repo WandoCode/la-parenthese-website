@@ -45,3 +45,17 @@
   position: absolute;
   width: 1px;
 }
+
+.hide-desktop {
+  @include breakpoint('large') {
+    display: none;
+  }
+}
+
+.show-desktop {
+  display: none;
+
+  @include breakpoint('large') {
+    display: block;
+  }
+}

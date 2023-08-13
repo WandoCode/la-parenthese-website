@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-      <button class="burger-menu">
+      <button class="burger-menu hide-desktop">
         <img
           class="burger-menu__img"
           src="/public/burger_menu.svg"
@@ -17,11 +17,14 @@
       </button>
       <div class="logo">
         <a href="/" aria-label="Page d'accueil de La parenthèse enchantée">
-          <img
-            class="logo__img"
-            src="/public/logo_lg.svg"
-            alt="Logo de La parenthèse enchantée"
-          />
+          <picture>
+            <source media="(max-width: 64rem)" srcset="/public/logo_sm.svg" />
+            <img
+              class="logo__img"
+              src="/public/logo_lg.svg"
+              alt="Logo de La parenthèse enchantée"
+            />
+          </picture>
         </a>
       </div>
       <nav class="header__nav" id="main-nav" aria-label="main">
@@ -47,12 +50,17 @@
     <main>
       <div>
         <picture class="pictures">
-          <source srcset="" media="" class="pictures__source" />
+          <source
+            srcset="/public/bottle-salt-sm.png"
+            media="(max-width: 64rem)"
+            class="pictures__source"
+          />
           <img
             class="pictures__img"
             src="/public/bottle-salt-lg.png"
             alt="bottle-salt-lg"
-        /></picture>
+          />
+        </picture>
       </div>
       <div>
         <h1>
@@ -79,7 +87,7 @@
           aria-label="page d'accueil de La parenthèse enchantée"
         >
           <img
-            class="logo__img"
+            class="logo__img show-desktop"
             src="/public/logo_text.svg"
             alt="Logo de La parenthèse enchantée"
           />
