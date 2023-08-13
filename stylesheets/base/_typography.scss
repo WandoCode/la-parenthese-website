@@ -9,8 +9,9 @@ body {
   font-size: var(--fs-sm-300);
 }
 
-.nav__link {
+.nav a {
   color: var(--clr-primary-600);
+  font-family: $secondary-font-stack;
 
   &.current {
     color: var(--clr-primary-400);
