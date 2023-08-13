@@ -5,8 +5,39 @@ const headerNav = document.getElementsByClassName('header__nav')[0]
 let burgerMenuIsOpen = false
 
 markActiveNavLinks()
-toogleMenuIsFocused()
+
+// When the page load, menu is closed: links can't be focused
+toogleMenuIsFocusable()
+
 menuButton.addEventListener('click', openMobileMenu)
+
+function openMobileMenu() {
+  burgerMenuIsOpen = !burgerMenuIsOpen
+
+  headerNav.classList.add('show-menu')
+
+  toogleMenuIsFocusable()
+  menuButton.focus()
+
+  toggleMenuButtonListener()
+  headerNav.addEventListener('keydown', onkeydown)
+
+  toggleMenuButtonImage()
+}
+
+function closeMobileMenu() {
+  burgerMenuIsOpen = !burgerMenuIsOpen
+
+  headerNav.classList.remove('show-menu')
+
+  toogleMenuIsFocusable()
+  menuButton.focus()
+
+  toggleMenuButtonListener()
+  headerNav.removeEventListener('keydown', onkeydown)
+
+  toggleMenuButtonImage()
+}
 
 function markActiveNavLinks() {
   const navsLinks = document.querySelectorAll('nav a')
@@ -20,27 +51,6 @@ function markActiveNavLinks() {
   }
 }
 
-function openMobileMenu() {
-  burgerMenuIsOpen = !burgerMenuIsOpen
-  toggleMenuButtonListener()
-  headerNav.classList.add('show-menu')
-  menuButton.focus()
-  toogleMenuIsFocused()
-  headerNav.addEventListener('keydown', onkeydown)
-  menuButton.getElementsByTagName('img')[0].src = '/public/close.svg'
-}
-
-function closeMobileMenu() {
-  burgerMenuIsOpen = !burgerMenuIsOpen
-
-  toggleMenuButtonListener()
-  headerNav.classList.remove('show-menu')
-  toogleMenuIsFocused()
-  menuButton.focus()
-  headerNav.removeEventListener('keydown', onkeydown)
-  menuButton.getElementsByTagName('img')[0].src = '/public/burger_menu.svg'
-}
-
 function toggleMenuButtonListener() {
   if (burgerMenuIsOpen) {
     menuButton.addEventListener('click', closeMobileMenu)
@@ -51,7 +61,13 @@ function toggleMenuButtonListener() {
   }
 }
 
-function toogleMenuIsFocused() {
+function toggleMenuButtonImage() {
+  menuButton.getElementsByTagName('img')[0].src = burgerMenuIsOpen
+    ? '/public/close.svg'
+    : '/public/burger_menu.svg'
+}
+
+function toogleMenuIsFocusable() {
   const navLinks = headerNav.getElementsByTagName('a')
 
   for (let i = 0; i < navLinks.length; i++) {
