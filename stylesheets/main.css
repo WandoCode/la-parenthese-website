@@ -1,4 +1,5 @@
 :root {
+  --clr-primary-300: hsl(183, 35%, 52%);
   --clr-primary-400: hsl(183, 70%, 36%);
   --clr-primary-600: hsl(183, 84%, 17%);
   --clr-primary-700: hsl(183, 45%, 16%);
@@ -10,6 +11,9 @@
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-200: #f9f6ef;
   --clr-neutral-300: #e9f2ff;
+}
+:root .fc-primary-300 {
+  color: hsl(183, 35%, 52%);
 }
 :root .fc-primary-400 {
   color: hsl(183, 70%, 36%);
