@@ -6,7 +6,7 @@ let burgerMenuIsOpen = false
 
 markActiveNavLinks()
 
-// When the page load, menu is closed: links can't be focused
+// When the page load in mobile, menu is closed: links can't be focused
 toogleMenuIsFocusable()
 
 menuButton.addEventListener('click', openMobileMenu)

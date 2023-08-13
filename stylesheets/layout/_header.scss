@@ -2,17 +2,24 @@
 
 .header {
   position: fixed;
+
   display: grid;
   justify-items: center;
 
   width: 100%;
+
   background-color: white;
+
+  @include breakpoint('large') {
+    position: relative;
+
+    display: flex;
+  }
 
   & #open-menu-btn,
   #close-menu-btn {
     justify-self: end;
 
-    color: var(--clr-primary-300);
     background-color: transparent;
     border: none;
   }
@@ -20,30 +27,45 @@
   &__first {
     display: grid;
     justify-items: center;
-    z-index: 10;
+
     width: 100%;
+    z-index: 10;
 
     background-color: white;
+
+    @include breakpoint('large') {
+      align-items: center;
+    }
   }
 
   &__nav {
     position: absolute;
-    top: 100%;
+    bottom: 0%;
+
     display: flex;
-    padding-block: in-rem(50);
-    gap: in-rem(50);
     flex-direction: column;
     align-items: center;
+    gap: in-rem(50);
+
     width: 100%;
 
-    translate: 0 -150%;
+    padding-block: in-rem(50);
+
     z-index: 0;
-    background-color: gray; // TODO: A changer
 
     transition: 0.75s;
+
+    background-color: gray;
+
+    @include breakpoint('large') {
+      position: relative;
+
+      translate: 0;
+      background-color: transparent;
+    }
   }
 
   .show-menu {
-    translate: 0 0;
+    translate: 0 100%;
   }
 }
