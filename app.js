@@ -3,6 +3,7 @@ const menuButton = document.getElementById('open-menu-btn')
 const headerNav = document.getElementsByClassName('header__nav')[0]
 
 let burgerMenuIsOpen = false
+let screenSizeIsMobile = window.screen.width < 1024
 
 markActiveNavLinks()
 
@@ -10,9 +11,10 @@ markActiveNavLinks()
 toogleMenuIsFocusable()
 
 menuButton.addEventListener('click', openMobileMenu)
+window.addEventListener('resize', handleWindowResize)
 
 function openMobileMenu() {
-  burgerMenuIsOpen = !burgerMenuIsOpen
+  burgerMenuIsOpen = true
 
   headerNav.classList.add('show-menu')
 
@@ -26,7 +28,7 @@ function openMobileMenu() {
 }
 
 function closeMobileMenu() {
-  burgerMenuIsOpen = !burgerMenuIsOpen
+  burgerMenuIsOpen = false
 
   headerNav.classList.remove('show-menu')
 
@@ -51,6 +53,16 @@ function markActiveNavLinks() {
   }
 }
 
+function handleWindowResize() {
+  const precValScreenSizeIsMobile = screenSizeIsMobile
+  screenSizeIsMobile = window.screen.width < 1024
+
+  if (precValScreenSizeIsMobile !== screenSizeIsMobile) {
+    toogleMenuIsFocusable()
+    closeMobileMenu()
+  }
+}
+
 function toggleMenuButtonListener() {
   if (burgerMenuIsOpen) {
     menuButton.addEventListener('click', closeMobileMenu)
@@ -72,7 +84,10 @@ function toogleMenuIsFocusable() {
 
   for (let i = 0; i < navLinks.length; i++) {
     const link = navLinks[i]
-    link.tabIndex = burgerMenuIsOpen ? 0 : -1
+
+    // Links are always focusable in desktop ()
+    if (!screenSizeIsMobile) link.tabIndex = 0
+    else link.tabIndex = burgerMenuIsOpen ? 0 : -1
   }
 }
 
@@ -98,3 +113,5 @@ function onkeydown(e) {
       break
   }
 }
+
+// TODO: la naviguation avec tab n'est pas terminée: cas où on revient en arriere non-géré (maj+tab)
