@@ -10,7 +10,6 @@
   justify-items: center;
 
   width: 100%;
-  height: $header-height-sm;
 
   @include breakpoint('large') {
     position: relative;
@@ -30,17 +29,40 @@
     display: grid;
     justify-items: center;
     grid-template-rows: min-content auto;
-    align-items: center;
 
     width: 100%;
+    height: $header-height-sm;
     z-index: 10;
+
+    padding-inline: in-rem(29);
+
+    background: rgb(249, 246, 239);
+    background: $body-background;
+
+    transition: height 0.5s;
+
+    box-shadow: none;
 
     @include breakpoint('large') {
       align-items: center;
     }
 
-    background: rgb(249, 246, 239);
-    background: $body-background;
+    &--reduced {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      height: in-rem(60);
+
+      box-shadow: 0 -12px 15px 3px black;
+    }
+  }
+
+  & .logo {
+    margin-top: in-rem(15);
+
+    &__icon {
+      display: none;
+    }
   }
 
   &__nav {
@@ -63,7 +85,6 @@
   &__burger-menu {
     max-height: in-rem(25);
 
-    margin-right: in-rem(29);
     margin-top: in-rem(20);
     padding: 0;
 

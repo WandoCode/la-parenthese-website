@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__first header__first--transparent-bg">
+      <div class="header__first">
         <button
           class="header__burger-menu hide-desktop"
           id="open-menu-btn"
@@ -30,13 +30,19 @@
             aria-label="Page d'accueil de La parenthèse enchantée"
             tabindex="1"
           >
+            <img
+              src="./public/logo-icon.svg"
+              alt="Logo de La parenthèse enchantée"
+              class="logo__icon"
+            />
+
             <picture>
               <source
                 media="(max-width: 64rem)"
                 srcset="./public/logo_sm.svg"
               />
               <img
-                class="logo__img"
+                class="logo__full"
                 src="./public/logo_lg.svg"
                 alt="Logo de La parenthèse enchantée"
               />
