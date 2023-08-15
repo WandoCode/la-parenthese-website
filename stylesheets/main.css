@@ -323,8 +323,11 @@ body {
     box-shadow: -1px -1px 9px 20000px rgba(0, 0, 0, 0.411);
   }
 }
-main {
+.main {
   padding-top: calc(10.625rem + 2rem);
+}
+.main__images {
+  width: 100%;
 }
 
 .button {

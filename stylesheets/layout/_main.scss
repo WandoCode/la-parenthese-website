@@ -1,5 +1,9 @@
 @use '../abstracts/' as *;
 
-main {
+.main {
   padding-top: calc($header-height-sm + in-rem(32));
+
+  &__images {
+    width: 100%;
+  }
 }
