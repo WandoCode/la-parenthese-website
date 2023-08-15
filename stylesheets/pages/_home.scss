@@ -1,2 +1,29 @@
+@use '../abstracts/' as *;
+
 .home {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-inline: in-rem(16);
+
+    & .h2 {
+      margin-bottom: in-rem(32);
+    }
+    & .h1 {
+      margin-bottom: in-rem(64);
+    }
+  }
+
+  &__cta {
+    display: grid;
+    gap: in-rem(16);
+
+    margin-bottom: in-rem(64);
+  }
+
+  &__sm-text {
+    margin-bottom: in-rem(64);
+  }
 }

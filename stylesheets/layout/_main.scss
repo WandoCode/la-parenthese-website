@@ -29,13 +29,4 @@
   &__images {
     width: 100%;
   }
-
-  &__text {
-    & .h2 {
-      margin-bottom: in-rem(32);
-    }
-    & .h1 {
-      margin-bottom: in-rem(64);
-    }
-  }
 }
