@@ -15,32 +15,30 @@ window.addEventListener('resize', handleWindowResize)
 
 function openMobileMenu() {
   burgerMenuIsOpen = true
-
   headerNav.classList.add('show-menu')
 
-  toogleMenuIsFocusable()
-  menuButton.focus()
-
-  toggleMenuButtonListener()
   headerNav.addEventListener('keydown', onkeydown)
   menuButton.addEventListener('keydown', onkeydown)
+  document.addEventListener('click', handleClick)
 
-  toggleMenuButtonImage()
-  toggleAccessibilityDescriptions()
+  toggleMainNav()
 }
 
 function closeMobileMenu() {
   burgerMenuIsOpen = false
-
   headerNav.classList.remove('show-menu')
 
-  toogleMenuIsFocusable()
-  menuButton.focus()
-
-  toggleMenuButtonListener()
   headerNav.removeEventListener('keydown', onkeydown)
   menuButton.removeEventListener('keydown', onkeydown)
+  document.removeEventListener('click', handleClick)
 
+  toggleMainNav()
+}
+
+function toggleMainNav() {
+  menuButton.focus()
+  toogleMenuIsFocusable()
+  toggleMenuButtonListener()
   toggleMenuButtonImage()
   toggleAccessibilityDescriptions()
 }
@@ -67,6 +65,13 @@ function handleWindowResize() {
   }
 }
 
+function handleClick(e) {
+  const target = e.target
+
+  if (!headerNav.contains(target) && !menuButton.contains(target))
+    closeMobileMenu()
+}
+
 function toggleMenuButtonListener() {
   if (burgerMenuIsOpen) {
     menuButton.addEventListener('click', closeMobileMenu)
@@ -89,7 +94,7 @@ function toogleMenuIsFocusable() {
   for (let i = 0; i < navLinks.length; i++) {
     const link = navLinks[i]
 
-    // Links are always focusable in desktop ()
+    // Links are always focusable in desktop
     if (!screenSizeIsMobile) link.tabIndex = 0
     else link.tabIndex = burgerMenuIsOpen ? 0 : -1
   }
@@ -138,5 +143,3 @@ function onkeydown(e) {
       break
   }
 }
-
-// TODO: il manque l'accessibilité du menu (indiqué qu'il est ouvert ou fermé entre autre)
