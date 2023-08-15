@@ -1,3 +1,5 @@
+@use './functions' as *;
+
 /// Regular font family
 $text-font-stack: 'Arsenal', sans-serif !default;
 
@@ -6,3 +8,12 @@ $secondary-font-stack: 'Amaranth', sans-serif !default;
 
 /// Container's maximum width
 $max-width: 1180px;
+
+//Header-heights
+$header-height-sm: in-rem(170);
+
+$body-background: linear-gradient(
+  90deg,
+  rgba(249, 246, 239, 1) 0%,
+  rgba(233, 242, 255, 1) 100%
+);

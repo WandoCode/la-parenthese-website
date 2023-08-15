@@ -1,14 +1,16 @@
 @use '../abstracts/' as *;
 
 .header {
+  $nav-animation-timing: 0.75s;
+
   position: fixed;
+  top: 0;
 
   display: grid;
   justify-items: center;
 
   width: 100%;
-
-  background-color: white;
+  height: $header-height-sm;
 
   @include breakpoint('large') {
     position: relative;
@@ -27,45 +29,61 @@
   &__first {
     display: grid;
     justify-items: center;
+    grid-template-rows: min-content auto;
+    align-items: center;
 
     width: 100%;
     z-index: 10;
 
-    background-color: white;
-
     @include breakpoint('large') {
       align-items: center;
     }
+
+    background: rgb(249, 246, 239);
+    background: $body-background;
   }
 
   &__nav {
     position: absolute;
     bottom: 0%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: in-rem(50);
-
-    width: 100%;
-
-    padding-block: in-rem(50);
-
     z-index: 0;
 
-    transition: 0.75s;
-
-    background-color: gray;
+    translate: 0 -50%;
+    transition: translate $nav-animation-timing;
 
     @include breakpoint('large') {
       position: relative;
 
       translate: 0;
-      background-color: transparent;
+      background: transparent;
+    }
+  }
+
+  &__burger-menu {
+    max-height: in-rem(25);
+
+    margin-right: in-rem(29);
+    margin-top: in-rem(20);
+    padding: 0;
+
+    & > img {
+      height: 100%;
     }
   }
 
   .show-menu {
     translate: 0 100%;
+
+    animation: show-overlay calc($nav-animation-timing - 0.1s) 0.1s forwards;
+  }
+}
+
+@keyframes show-overlay {
+  0% {
+    box-shadow: -1px -1px 9px 20000px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: -1px -1px 9px 20000px rgba(0, 0, 0, 0.411);
   }
 }

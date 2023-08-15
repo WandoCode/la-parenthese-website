@@ -1,2 +1,5 @@
+@use '../abstracts/' as *;
+
 main {
+  padding-top: calc($header-height-sm + in-rem(32));
 }

@@ -66,6 +66,8 @@ function handleWindowResize() {
 }
 
 function handleClick(e) {
+  e.preventDefault()
+
   const target = e.target
 
   if (!headerNav.contains(target) && !menuButton.contains(target))

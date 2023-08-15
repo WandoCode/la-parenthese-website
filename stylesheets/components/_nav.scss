@@ -1,6 +1,16 @@
 @use '../abstracts/' as *;
 
 .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: in-rem(50);
+
+  width: 100%;
+  padding-block: in-rem(50);
+
+  background: $body-background;
+
   &__list {
     display: flex;
     flex-direction: column;
