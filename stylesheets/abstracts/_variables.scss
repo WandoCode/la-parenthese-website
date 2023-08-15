@@ -10,7 +10,7 @@ $secondary-font-stack: 'Amaranth', sans-serif !default;
 $max-width: 1180px;
 
 //Header-heights
-$header-height-sm: in-rem(170);
+$header-height-sm: calc(in-rem(80) + 20vw);
 
 $body-background: linear-gradient(
   90deg,

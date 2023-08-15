@@ -4,9 +4,9 @@
 @use '../abstracts/' as *;
 
 body {
-  color: var(--clr-primary-900);
+  color: var(--clr-primary-800);
   font-family: $text-font-stack;
-  font-size: var(--fs-sm-300);
+  font-size: var(--fs-300);
 }
 
 .nav a {
@@ -16,4 +16,33 @@ body {
   &.current {
     color: var(--clr-primary-400);
   }
+}
+
+.h1 {
+  text-align: center;
+  font-size: var(--fs-600);
+  font-weight: 700;
+  line-height: 143%; /* 2.86rem */
+  letter-spacing: 0.27rem;
+
+  & > em {
+    color: var(--clr-primary-400);
+    font-style: italic;
+  }
+}
+
+.h2 {
+  text-align: center;
+  font-size: var(--fs-400);
+  line-height: 171.5%; /* 1.93rem */
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+}
+
+.text-xs {
+  font-size: var(--fs-300);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.145rem;
 }

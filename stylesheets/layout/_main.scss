@@ -1,9 +1,41 @@
 @use '../abstracts/' as *;
 
 .main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: in-rem(64);
+
   padding-top: calc($header-height-sm + in-rem(32));
+
+  background-image: url('../public/bubble-background.svg');
+  background-position: bottom 120px right 0;
+  background-repeat: no-repeat;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 100px;
+    width: 140px;
+
+    background-image: url('../public/lotus-light.svg');
+    background-repeat: no-repeat;
+  }
 
   &__images {
     width: 100%;
+  }
+
+  &__text {
+    & .h2 {
+      margin-bottom: in-rem(32);
+    }
+    & .h1 {
+      margin-bottom: in-rem(64);
+    }
   }
 }
