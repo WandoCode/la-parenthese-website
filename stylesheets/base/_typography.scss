@@ -9,6 +9,13 @@ body {
   font-size: var(--fs-300);
 }
 
+.footer {
+  color: var(--clr-neutral-200);
+  text-align: center;
+  & a {
+    color: var(--clr-neutral-200);
+  }
+}
 .nav a {
   color: var(--clr-primary-600);
   font-family: $secondary-font-stack;
