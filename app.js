@@ -23,8 +23,10 @@ function openMobileMenu() {
 
   toggleMenuButtonListener()
   headerNav.addEventListener('keydown', onkeydown)
+  menuButton.addEventListener('keydown', onkeydown)
 
   toggleMenuButtonImage()
+  toggleAccessibilityDescriptions()
 }
 
 function closeMobileMenu() {
@@ -37,8 +39,10 @@ function closeMobileMenu() {
 
   toggleMenuButtonListener()
   headerNav.removeEventListener('keydown', onkeydown)
+  menuButton.removeEventListener('keydown', onkeydown)
 
   toggleMenuButtonImage()
+  toggleAccessibilityDescriptions()
 }
 
 function markActiveNavLinks() {
@@ -91,6 +95,19 @@ function toogleMenuIsFocusable() {
   }
 }
 
+function toggleAccessibilityDescriptions() {
+  const hiddenText = menuButton.getElementsByTagName('span')[0]
+
+  menuButton.ariaLabel = burgerMenuIsOpen
+    ? 'Close navigation'
+    : 'Open navigation'
+
+  hiddenText.innerText = burgerMenuIsOpen
+    ? 'Close navigation'
+    : 'Open navigation'
+  menuButton.ariaExpanded = burgerMenuIsOpen
+}
+
 function onkeydown(e) {
   const key = e.key
 
@@ -98,10 +115,18 @@ function onkeydown(e) {
     case 'Tab':
       const mainNavLinks = headerNav.getElementsByTagName('a')
 
-      // If the current focused link is the last one, the next focus with tab will be changed
-      if (document.activeElement === mainNavLinks[mainNavLinks.length - 1]) {
+      // Handle tab: keep focus in the menu
+      if (
+        !e.shiftKey &&
+        document.activeElement === mainNavLinks[mainNavLinks.length - 1]
+      ) {
         e.preventDefault()
         menuButton.focus()
+      }
+      // Handle shift+tab: keep focus in the menu
+      if (e.shiftKey && document.activeElement === menuButton) {
+        e.preventDefault()
+        mainNavLinks[mainNavLinks.length - 1].focus()
       }
       break
 
@@ -114,4 +139,4 @@ function onkeydown(e) {
   }
 }
 
-// TODO: la naviguation avec tab n'est pas terminée: cas où on revient en arriere non-géré (maj+tab)
+// TODO: il manque l'accessibilité du menu (indiqué qu'il est ouvert ou fermé entre autre)

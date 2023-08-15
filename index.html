@@ -10,7 +10,14 @@
   <body>
     <header class="header">
       <div class="header__first">
-        <button class="burger-menu hide-desktop" id="open-menu-btn">
+        <button
+          class="burger-menu hide-desktop"
+          id="open-menu-btn"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-haspopup="menu"
+        >
+          <span class="visually-hidden">Open navigation</span>
           <img
             class="burger-menu__img"
             src="/public/burger_menu.svg"
@@ -34,7 +41,7 @@
           </a>
         </div>
       </div>
-      <nav class="header__nav nav" id="main-nav" aria-label="main">
+      <nav class="header__nav nav" id="main-nav" aria-label="main menu">
         <ul class="nav__list">
           <li>
             <a class="nav__link" href="/">Accueil</a>
