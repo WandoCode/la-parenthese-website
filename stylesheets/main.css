@@ -332,7 +332,7 @@ body {
 }
 .footer__nav > ul {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 4rem;
 }
 .footer__cta {
@@ -340,17 +340,17 @@ body {
 }
 .footer__legal ul {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 2rem;
 }
 .footer__buisness-infos {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 2rem;
 }
 .footer__copyright {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .header {
@@ -419,7 +419,7 @@ body {
   }
 }
 .header__burger-menu {
-  max-height: 1.5625rem;
+  height: 1.875rem;
   margin-top: 1.25rem;
   padding: 0;
 }

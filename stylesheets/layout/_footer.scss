@@ -1,7 +1,7 @@
 @use '../abstracts/' as *;
 
 .footer {
-  $footer-flow-sm: in-rem(8);
+  $footer-flow-sm: in-rem(12);
   $footer-flow: in-rem(32);
   $footer-flow-lg: in-rem(64);
 
