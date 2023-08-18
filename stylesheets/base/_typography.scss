@@ -16,6 +16,7 @@ body {
     color: var(--clr-neutral-200);
   }
 }
+
 .nav a {
   color: var(--clr-primary-600);
   font-family: $secondary-font-stack;
@@ -66,5 +67,9 @@ body {
   &--secondary {
     color: var(--clr-secondary-400);
     font-weight: 400;
+  }
+
+  &--sm {
+    font-weight: normal;
   }
 }

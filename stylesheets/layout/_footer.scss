@@ -1,6 +1,9 @@
 @use '../abstracts/' as *;
 
 .footer {
+  $footer-flow-sm: in-rem(8);
+  $footer-flow: in-rem(32);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,15 +15,43 @@
     var(--clr-primary-700) 100%
   );
 
-  &__logo {
+  &__header {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
-  &__bottom {
+  &__body {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  &__nav > ul {
+    display: grid;
+    gap: $footer-flow-sm;
+
+    margin-bottom: $footer-flow;
+  }
+
+  &__cta {
+    margin-bottom: $footer-flow;
+  }
+
+  &__legal ul {
+    display: grid;
+    gap: $footer-flow-sm;
+    margin-bottom: $footer-flow;
+  }
+
+  &__buisness-infos {
+    display: grid;
+    gap: $footer-flow-sm;
+    margin-bottom: $footer-flow;
+  }
+
+  &__copyright {
+    display: grid;
+    gap: $footer-flow-sm;
   }
 }
