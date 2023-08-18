@@ -28,11 +28,29 @@
       var(--clr-secondary-400) 50.66%,
       var(--clr-secondary-800) 100%
     );
+
+    @include on-event {
+      text-decoration: none;
+      color: white;
+
+      background: linear-gradient(
+        176deg,
+        var(--clr-secondary-300) 0%,
+        var(--clr-secondary-300) 50.66%,
+        var(--clr-secondary-400) 100%
+      );
+    }
   }
 
   &--secondary {
     border: 2px solid var(--clr-secondary-400);
     background-color: var(--clr-neutral-400);
+
+    @include on-event {
+      text-decoration: none;
+      color: var(--clr-secondary-400);
+      outline: 1px solid var(--clr-secondary-400);
+    }
   }
 
   &--sm {
@@ -46,3 +64,5 @@
     height: unset;
   }
 }
+
+// TODO: revoir l'animation hover des boutons

@@ -5,6 +5,7 @@
   --clr-primary-700: hsl(183, 46%, 16%);
   --clr-primary-800: hsl(183, 44%, 11%);
   --clr-primary-900: hsl(183, 43%, 11%);
+  --clr-secondary-300: hsl(24, 50%, 45%);
   --clr-secondary-400: hsl(24, 100%, 31%);
   --clr-secondary-800: hsl(24, 84%, 17%);
   --clr-secondary-850: hsl(24, 100%, 15%);
@@ -30,6 +31,9 @@
 }
 :root .fc-primary-900 {
   color: hsl(183, 43%, 11%);
+}
+:root .fc-secondary-300 {
+  color: hsl(24, 50%, 45%);
 }
 :root .fc-secondary-400 {
   color: hsl(24, 100%, 31%);
@@ -555,9 +559,19 @@ body {
 .btn--primary {
   background: linear-gradient(176deg, var(--clr-secondary-400) 0%, var(--clr-secondary-400) 50.66%, var(--clr-secondary-800) 100%);
 }
+.btn--primary:hover, .btn--primary:active, .btn--primary:focus, .btn--primary:focus-within {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(176deg, var(--clr-secondary-300) 0%, var(--clr-secondary-300) 50.66%, var(--clr-secondary-400) 100%);
+}
 .btn--secondary {
   border: 2px solid var(--clr-secondary-400);
   background-color: var(--clr-neutral-400);
+}
+.btn--secondary:hover, .btn--secondary:active, .btn--secondary:focus, .btn--secondary:focus-within {
+  text-decoration: none;
+  color: var(--clr-secondary-400);
+  outline: 1px solid var(--clr-secondary-400);
 }
 .btn--sm {
   display: inline-flex;
