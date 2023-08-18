@@ -16,9 +16,11 @@
     position: relative;
 
     display: flex;
-
     align-items: flex-end;
     height: $header-height-desktop;
+
+    width: min(100%, 1490px);
+    margin-inline: auto;
   }
 
   & #open-menu-btn,
@@ -49,9 +51,11 @@
     box-shadow: none;
 
     @include breakpoint('large') {
+      justify-content: flex-start;
       background: transparent;
       height: unset;
       align-items: center;
+      width: unset;
     }
 
     &--reduced {
@@ -66,6 +70,10 @@
 
   & .logo {
     margin-top: in-rem(15);
+
+    @include breakpoint('large') {
+      width: 385px;
+    }
 
     &__icon {
       display: none;
