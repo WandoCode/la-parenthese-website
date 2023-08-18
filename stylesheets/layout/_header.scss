@@ -8,7 +8,7 @@
 
   display: grid;
   justify-items: center;
-  z-index: 10;
+  z-index: 2;
 
   width: 100%;
 
@@ -35,6 +35,8 @@
     height: $header-height-sm;
 
     padding-inline: in-rem(29);
+
+    z-index: 3;
 
     background: rgb(249, 246, 239);
     background: $body-background;
@@ -94,7 +96,7 @@
   }
 
   .show-menu {
-    translate: 0 100%;
+    translate: 0 99%;
 
     animation: show-overlay calc($nav-animation-timing - 0.1s) 0.1s forwards;
   }
