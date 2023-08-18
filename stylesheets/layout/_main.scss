@@ -8,10 +8,10 @@
   gap: in-rem(64);
 
   padding-top: calc($header-height-sm + in-rem(32));
-
+  padding-bottom: 8rem;
   background-image: url('../public/bubble-background.svg');
   background-position: bottom 120px right 0;
-  background-repeat: no-repeat;
+  background-repeat: space;
 
   &:after {
     content: '';
