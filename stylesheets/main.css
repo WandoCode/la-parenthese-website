@@ -465,24 +465,30 @@ body {
   }
 }
 
-.home__text {
+.home {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.home .h1 {
+  margin-bottom: 2rem;
   padding-inline: 1rem;
 }
-.home__text .h2 {
-  margin-bottom: 2rem;
+.home__sm-text {
+  margin-bottom: 4rem;
+  padding-inline: 1rem;
 }
-.home__text .h1 {
+.home .h2 {
+  margin-bottom: 4rem;
+  padding-inline: 1rem;
+}
+.home__illustration {
   margin-bottom: 4rem;
 }
 .home__cta {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 4rem;
-}
-.home__sm-text {
   margin-bottom: 4rem;
 }
 

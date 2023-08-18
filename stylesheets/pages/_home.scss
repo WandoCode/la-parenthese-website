@@ -1,29 +1,37 @@
 @use '../abstracts/' as *;
 
 .home {
-  &__text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  $flow-sm: in-rem(32);
+  $flow-lg: in-rem(64);
+  $padding-inline: in-rem(16);
 
-    padding-inline: in-rem(16);
+  display: flex;
+  flex-direction: column;
 
-    & .h2 {
-      margin-bottom: in-rem(32);
-    }
-    & .h1 {
-      margin-bottom: in-rem(64);
-    }
-  }
-
-  &__cta {
-    display: grid;
-    gap: in-rem(16);
-
-    margin-bottom: in-rem(64);
+  & .h1 {
+    margin-bottom: $flow-sm;
+    padding-inline: $padding-inline;
   }
 
   &__sm-text {
-    margin-bottom: in-rem(64);
+    margin-bottom: $flow-lg;
+    padding-inline: $padding-inline;
+  }
+
+  & .h2 {
+    margin-bottom: $flow-lg;
+    padding-inline: $padding-inline;
+  }
+
+  &__illustration {
+    margin-bottom: $flow-lg;
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: in-rem(16);
+    margin-bottom: $flow-lg;
   }
 }
