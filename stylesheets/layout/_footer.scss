@@ -16,10 +16,19 @@
     var(--clr-primary-700) 100%
   );
 
+  &__container {
+    width: min(100%, 1490px);
+    margin-inline: auto;
+  }
+
   &__header {
     display: flex;
     justify-content: center;
     margin-bottom: 4rem;
+
+    @include breakpoint('large') {
+      justify-content: flex-start;
+    }
   }
 
   &__logo {
@@ -30,6 +39,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include breakpoint('large') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__nav > ul {
@@ -40,13 +54,16 @@
   }
 
   &__cta {
-    margin-bottom: $footer-flow-lg;
+    margin-bottom: calc($footer-flow-lg - $footer-flow-sm);
   }
 
   &__legal ul {
     display: grid;
     gap: $footer-flow-sm;
     margin-bottom: $footer-flow;
+    @include breakpoint('large') {
+      justify-items: end;
+    }
   }
 
   &__buisness-infos {
@@ -58,5 +75,11 @@
   &__copyright {
     display: grid;
     gap: $footer-flow-sm;
+
+    @include breakpoint('large') {
+      justify-items: end;
+    }
   }
 }
+
+//TODO: la type du footer ( et du reste aussi je pense que je suis passé à coté de pas mal de truc
