@@ -12,6 +12,7 @@ body {
 .footer {
   color: var(--clr-neutral-200);
   text-align: center;
+  font-size: var(--fs-350);
   & a {
     color: var(--clr-neutral-200);
   }
@@ -20,6 +21,7 @@ body {
 .nav a {
   color: var(--clr-primary-600);
   font-family: $secondary-font-stack;
+  font-size: var(--fs-350);
 
   &.current {
     color: var(--clr-primary-400);

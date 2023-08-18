@@ -51,6 +51,7 @@
 
 :root {
   --fs-300: 0.875rem;
+  --fs-350: 1rem;
   --fs-400: 1.125rem;
   --fs-500: 1.563rem;
   --fs-600: 2rem;
@@ -72,6 +73,9 @@
 }
 :root .fs-300 {
   font-size: var(--fs-300);
+}
+:root .fs-350 {
+  font-size: var(--fs-350);
 }
 :root .fs-400 {
   font-size: var(--fs-400);
@@ -247,6 +251,7 @@ body {
 .footer {
   color: var(--clr-neutral-200);
   text-align: center;
+  font-size: var(--fs-350);
 }
 .footer a {
   color: var(--clr-neutral-200);
@@ -255,6 +260,7 @@ body {
 .nav a {
   color: var(--clr-primary-600);
   font-family: "Amaranth", sans-serif;
+  font-size: var(--fs-350);
 }
 .nav a.current {
   color: var(--clr-primary-400);
@@ -315,6 +321,9 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 4rem;
+}
+.footer__logo {
+  padding-inline: 1rem;
 }
 .footer__body {
   display: flex;

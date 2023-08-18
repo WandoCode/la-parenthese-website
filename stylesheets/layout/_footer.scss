@@ -22,6 +22,10 @@
     margin-bottom: 4rem;
   }
 
+  &__logo {
+    padding-inline: 1rem;
+  }
+
   &__body {
     display: flex;
     flex-direction: column;
