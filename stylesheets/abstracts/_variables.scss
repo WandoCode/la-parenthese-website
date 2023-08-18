@@ -11,10 +11,16 @@ $max-width: 1180px;
 
 //Header-heights
 $header-height-sm: calc(in-rem(80) + 20vw);
-$header-height-desktop: in-rem(84);
+$header-height-desktop: in-rem(64);
 
 $body-background: linear-gradient(
   90deg,
   rgba(249, 246, 239, 1) 0%,
   rgba(233, 242, 255, 1) 100%
+);
+
+$body-background-desktop: radial-gradient(
+  221.6% 141.42% at 0% 0%,
+  #f9f6ef 0%,
+  #e9f2ff 100%
 );

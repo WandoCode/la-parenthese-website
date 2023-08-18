@@ -11,6 +11,7 @@
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-200: #f9f6ef;
   --clr-neutral-300: #e9f2ff;
+  --clr-neutral-400: #eff2f3;
 }
 :root .fc-primary-300 {
   color: hsl(183, 35%, 52%);
@@ -48,6 +49,9 @@
 :root .fc-neutral-300 {
   color: #e9f2ff;
 }
+:root .fc-neutral-400 {
+  color: #eff2f3;
+}
 
 :root {
   --fs-300: 0.875rem;
@@ -64,6 +68,7 @@
 @media (min-width: 64rem) {
   :root {
     --fs-300: 1rem;
+    --fs-350: 1.25rem;
     --fs-400: 1.425rem;
     --fs-500: 2rem;
     --fs-600: 2.827rem;
@@ -202,6 +207,11 @@ a:hover, a:active, a:focus, a:focus-within {
 
 body {
   background: linear-gradient(90deg, rgb(249, 246, 239) 0%, rgb(233, 242, 255) 100%);
+}
+@media (min-width: 64rem) {
+  body {
+    background: radial-gradient(221.6% 141.42% at 0% 0%, #f9f6ef 0%, #e9f2ff 100%);
+  }
 }
 
 @font-face {
@@ -365,7 +375,8 @@ body {
   .header {
     position: relative;
     display: flex;
-    height: 5.25rem;
+    align-items: flex-end;
+    height: 4rem;
   }
 }
 .header #open-menu-btn,
@@ -450,14 +461,21 @@ body {
   padding-top: calc(5rem + 20vw + 2rem);
   padding-bottom: 8rem;
   background-image: url("../public/bubble-background.svg");
-  background-position: bottom 120px right 0;
-  background-repeat: space;
+  background-position: bottom right 0;
+  background-repeat: no-repeat space;
 }
 @media (min-width: 64rem) {
   .main {
-    padding: 0;
-    height: calc(100vh - 5.25rem);
-    justify-content: flex-end;
+    padding-top: 4rem;
+    padding-bottom: 0;
+    padding-inline: 4rem;
+    background: none;
+  }
+}
+@media (min-width: 64rem) {
+  .main__body {
+    display: flex;
+    height: calc(100vh - 4rem);
   }
 }
 .main:after {
@@ -470,14 +488,31 @@ body {
   background-image: url("../public/lotus-light.svg");
   background-repeat: no-repeat;
 }
-.main__images {
+@media (min-width: 64rem) {
+  .main:after {
+    background-image: url("../public/lotus-light-desktop.svg");
+    width: 250px;
+    height: 210px;
+  }
+}
+.main__illustration {
   width: 100%;
 }
 @media (min-width: 64rem) {
-  .main__images {
-    width: auto;
+  .main__illustration {
+    flex-basis: 100%;
     height: 100%;
-    margin-inline: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    padding-bottom: 4rem;
+  }
+}
+@media (min-width: 64rem) {
+  .main__text {
+    flex-basis: 100%;
+    background-image: url("../public/bubble-background-desktop.svg");
+    background-position: center center;
+    background-repeat: no-repeat space;
   }
 }
 
@@ -501,6 +536,7 @@ body {
 }
 .btn--secondary {
   border: 2px solid var(--clr-secondary-400);
+  background-color: var(--clr-neutral-400);
 }
 .btn--sm {
   display: inline-flex;
@@ -534,6 +570,9 @@ body {
 @media (min-width: 64rem) {
   .nav__list {
     flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding-right: 8rem;
   }
 }
 
@@ -541,46 +580,36 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 64rem) {
-  .home {
-    height: calc(100% - 4rem);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto min-content;
-    gap: 0 2rem;
-    max-width: 90%;
-    margin-inline: auto;
-    margin-bottom: 1rem;
-  }
+.home__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .home .h1 {
   margin-top: 2rem;
   margin-bottom: 4rem;
   padding-inline: 1rem;
 }
+@media (min-width: 64rem) {
+  .home .h1 {
+    margin-bottom: 0;
+  }
+}
 .home__sm-text {
   padding-inline: 1rem;
+}
+@media (min-width: 64rem) {
+  .home__sm-text {
+    align-self: flex-start;
+  }
 }
 .home .h2 {
   margin-bottom: 4rem;
   padding-inline: 1rem;
 }
-@media (min-width: 64rem) {
-  .home .h2 {
-    grid-row: 1/2;
-  }
-}
 .home__illustration {
   margin-bottom: 4rem;
-}
-@media (min-width: 64rem) {
-  .home__illustration {
-    grid-row: 1/5;
-    margin-bottom: 0;
-  }
-  .home__illustration > picture {
-    height: 100%;
-  }
 }
 .home__cta {
   display: flex;
@@ -588,6 +617,14 @@ body {
   align-items: center;
   gap: 1rem;
   margin-bottom: 6rem;
+}
+@media (min-width: 64rem) {
+  .home__cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 0;
+  }
 }
 
 /**

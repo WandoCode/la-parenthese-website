@@ -70,40 +70,44 @@
         </ul>
       </nav>
     </header>
-    <main class="main">
-      <section class="home">
-        <h1 class="h1">
-          Ressourcez-vous avec les massages des cinq continents
-          <em>à la maison</em>
-        </h1>
+    <main class="main home">
+      <section class="main__body">
+        <img
+          class="show-desktop main__illustration"
+          src="./public/bottle-salt-lg.png"
+          alt="Small bottle of essential oil on blue cristals with camomile and lavender"
+        />
 
-        <div class="home__illustration">
-          <picture class="pictures">
-            <source
-              srcset="./public/bottle-salt-sm.png"
-              media="(max-width: 64rem)"
-              class="pictures__source"
-            />
-            <img
-              class="pictures__img main__images"
-              src="./public/bottle-salt-lg.png"
-              alt="Small bottle of essential oil on blue cristals with camomile and lavender"
-            />
-          </picture>
-        </div>
-        <h2 class="h2">
-          Découvrez l'harmonie du bien-être: offrez à votre corps une expérience
-          de relaxation ultime à domicile, jusqu'à 20km de Tournai*
-        </h2>
+        <div class="main__text home__text">
+          <h1 class="h1">
+            Ressourcez-vous avec les massages des cinq continents
+            <em>à la maison</em>
+          </h1>
 
-        <div class="home__cta">
-          <a class="btn btn--primary" href="/massages.html">Découvrir</a>
-          <a class="btn btn--secondary" href="/reservation.html">Réserver</a>
-        </div>
-        <div class="home__sm-text text-xs">
-          <p>* Belgique: Tournai, Mouscron, Brunehaut, Frasnes, Leuze, etc.</p>
-          <p>France: Lille et Saint-Amand</p>
-          <p>En cas de doute, contactez la masseuse.</p>
+          <div class="home__cta">
+            <a class="btn btn--primary" href="/massages.html">Découvrir</a>
+            <a class="btn btn--secondary" href="/reservation.html">Réserver</a>
+          </div>
+
+          <img
+            class="hide-desktop home__illustration main__illustration"
+            src="./public/bottle-salt-sm.png"
+            alt="Small bottle of essential oil on blue cristals with camomile and lavender"
+          />
+          <h2 class="h2">
+            Découvrez l'harmonie du bien-être: offrez à votre corps une
+            expérience de relaxation ultime à domicile, jusqu'à 20km de Tournai*
+          </h2>
+
+          <div class="home__sm-text text-xs">
+            <p>
+              * Belgique: Tournai, Mouscron, Brunehaut, Frasnes, Leuze, etc.
+            </p>
+            <p>
+              France: Lille et Saint-Amand. En cas de doute, contactez la
+              masseuse.
+            </p>
+          </div>
         </div>
       </section>
     </main>

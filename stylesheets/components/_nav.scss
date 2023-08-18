@@ -24,6 +24,9 @@
 
     @include breakpoint('large') {
       flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      padding-right: in-rem(128);
     }
   }
 }

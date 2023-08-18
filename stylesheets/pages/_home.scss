@@ -4,55 +4,42 @@
   $flow-sm: in-rem(32);
   $flow-lg: in-rem(64);
   $padding-inline: in-rem(16);
+  $padding-desktop: in-rem(16);
 
   display: flex;
   flex-direction: column;
 
-  @include breakpoint('large') {
-    height: calc(100% - 4rem);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto min-content;
-    gap: 0 2rem;
-
-    max-width: 90%;
-    margin-inline: auto;
-    margin-bottom: 1rem;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   & .h1 {
     margin-top: $flow-sm;
     margin-bottom: $flow-lg;
     padding-inline: $padding-inline;
-
     @include breakpoint('large') {
+      margin-bottom: 0;
     }
   }
 
   &__sm-text {
     padding-inline: $padding-inline;
+
+    @include breakpoint('large') {
+      align-self: flex-start;
+    }
   }
 
   & .h2 {
     margin-bottom: $flow-lg;
     padding-inline: $padding-inline;
-
-    @include breakpoint('large') {
-      grid-row: 1 / 2;
-    }
   }
 
   &__illustration {
     margin-bottom: $flow-lg;
-
-    @include breakpoint('large') {
-      grid-row: 1 / 5;
-      margin-bottom: 0;
-
-      & > picture {
-        height: 100%;
-      }
-    }
   }
 
   &__cta {
@@ -61,5 +48,13 @@
     align-items: center;
     gap: in-rem(16);
     margin-bottom: 6rem;
+
+    @include breakpoint('large') {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: in-rem(64);
+
+      margin-bottom: 0;
+    }
   }
 }
