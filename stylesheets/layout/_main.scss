@@ -9,9 +9,16 @@
 
   padding-top: calc($header-height-sm + in-rem(32));
   padding-bottom: 8rem;
+
   background-image: url('../public/bubble-background.svg');
   background-position: bottom 120px right 0;
   background-repeat: space;
+
+  @include breakpoint('large') {
+    padding: 0;
+    height: calc(100vh - $header-height-desktop);
+    justify-content: flex-end;
+  }
 
   &:after {
     content: '';
@@ -28,5 +35,11 @@
 
   &__images {
     width: 100%;
+
+    @include breakpoint('large') {
+      width: auto;
+      height: 100%;
+      margin-inline: auto;
+    }
   }
 }

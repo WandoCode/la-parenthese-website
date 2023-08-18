@@ -11,6 +11,11 @@
 
   background: $body-background;
 
+  @include breakpoint('large') {
+    padding: 0;
+    background: transparent;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;

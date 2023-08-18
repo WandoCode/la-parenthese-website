@@ -16,6 +16,8 @@
     position: relative;
 
     display: flex;
+
+    height: $header-height-desktop;
   }
 
   & #open-menu-btn,
@@ -46,6 +48,8 @@
     box-shadow: none;
 
     @include breakpoint('large') {
+      background: transparent;
+      height: unset;
       align-items: center;
     }
 
@@ -106,6 +110,7 @@
   0% {
     box-shadow: -1px -1px 9px 20000px rgba(0, 0, 0, 0);
   }
+
   100% {
     box-shadow: -1px -1px 9px 20000px rgba(0, 0, 0, 0.411);
   }

@@ -11,6 +11,7 @@ $max-width: 1180px;
 
 //Header-heights
 $header-height-sm: calc(in-rem(80) + 20vw);
+$header-height-desktop: in-rem(84);
 
 $body-background: linear-gradient(
   90deg,
