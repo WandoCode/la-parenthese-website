@@ -83,6 +83,16 @@
     &__icon {
       display: none;
     }
+
+    &__full {
+      width: 261px;
+      height: 73px;
+
+      @include breakpoint('large') {
+        width: 385px;
+        height: 32px;
+      }
+    }
   }
 
   &__nav {

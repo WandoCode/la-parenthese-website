@@ -104,8 +104,8 @@ function toggleMenuButtonListener() {
 
 function toggleMenuButtonImage() {
   menuButton.getElementsByTagName('img')[0].src = burgerMenuIsOpen
-    ? './public/close.svg'
-    : './public/burger_menu.svg'
+    ? '/public/close.svg'
+    : '/public/burger_menu.svg'
 }
 
 function toogleMenuIsFocusable() {

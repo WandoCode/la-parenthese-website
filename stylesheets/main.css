@@ -498,6 +498,16 @@ body {
 .header .logo__icon {
   display: none;
 }
+.header .logo__full {
+  width: 261px;
+  height: 73px;
+}
+@media (min-width: 64rem) {
+  .header .logo__full {
+    width: 385px;
+    height: 32px;
+  }
+}
 .header__nav {
   position: absolute;
   bottom: 0%;
@@ -580,8 +590,9 @@ body {
 @media (min-width: 64rem) {
   .main__illustration {
     flex-basis: 50%;
-    height: 100%;
-    width: 50%;
+    height: 909px;
+    width: 752px;
+    max-height: 100%;
     -o-object-fit: contain;
        object-fit: contain;
     padding-bottom: 4rem;
