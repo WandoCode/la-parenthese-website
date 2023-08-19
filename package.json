@@ -1,9 +1,15 @@
 {
   "name": "la-parenthese",
-  "source": "./index.html",
+  "source": "/index.html",
+  "targets": {
+    "default": {
+      "distDir": "./docs"
+    }
+  },
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "server": "parcel serve"
   },
   "devDependencies": {
     "parcel": "latest"
