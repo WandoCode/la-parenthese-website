@@ -47,8 +47,8 @@
     background-color: var(--clr-neutral-400);
 
     @include on-event {
-      text-decoration: none;
       color: var(--clr-secondary-400);
+      text-decoration: none;
       outline: 1px solid var(--clr-secondary-400);
     }
   }
@@ -56,12 +56,19 @@
   &--sm {
     display: inline-flex;
 
+    width: unset;
+    height: unset;
+
     padding: in-rem(6) in-rem(35);
 
     border-radius: 100px;
 
-    width: unset;
-    height: unset;
+    @include breakpoint('large') {
+      padding: in-rem(8) in-rem(35);
+
+      font-size: 1rem;
+      letter-spacing: 0.2rem;
+    }
   }
 }
 

@@ -4,26 +4,35 @@
   $footer-flow-sm: in-rem(12);
   $footer-flow: in-rem(32);
   $footer-flow-lg: in-rem(64);
+  $footer-gap-desktop: 1rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   padding: 5rem 0;
+
   background: radial-gradient(
     399.52% 110.1% at 29.37% 0%,
     var(--clr-primary-800) 0%,
     var(--clr-primary-700) 100%
   );
 
+  @include breakpoint('large') {
+    padding: 7rem 0;
+  }
+
   &__container {
-    width: min(100%, 1490px);
+    width: $main-width;
+
     margin-inline: auto;
+    padding-inline: 3rem;
   }
 
   &__header {
     display: flex;
     justify-content: center;
+
     margin-bottom: 4rem;
 
     @include breakpoint('large') {
@@ -43,6 +52,7 @@
     @include breakpoint('large') {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
     }
   }
 
@@ -51,6 +61,10 @@
     gap: $footer-flow-sm;
 
     margin-bottom: $footer-flow-lg;
+
+    @include breakpoint('large') {
+      gap: $footer-gap-desktop;
+    }
   }
 
   &__cta {
@@ -60,16 +74,25 @@
   &__legal ul {
     display: grid;
     gap: $footer-flow-sm;
+
     margin-bottom: $footer-flow;
+
     @include breakpoint('large') {
       justify-items: end;
+      gap: $footer-gap-desktop;
     }
   }
 
   &__buisness-infos {
     display: grid;
     gap: $footer-flow-sm;
+
     margin-bottom: $footer-flow;
+
+    @include breakpoint('large') {
+      gap: $footer-gap-desktop;
+      justify-items: center;
+    }
   }
 
   &__copyright {
@@ -78,8 +101,10 @@
 
     @include breakpoint('large') {
       justify-items: end;
+      gap: $footer-gap-desktop;
     }
   }
 }
 
 //TODO: la type du footer ( et du reste aussi je pense que je suis passé à coté de pas mal de truc
+// TODO: revoir le outon du footer aussi

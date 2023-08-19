@@ -7,13 +7,16 @@
   gap: in-rem(50);
 
   width: 100%;
+
   padding-block: in-rem(50);
 
   background: $body-background;
 
   @include breakpoint('large') {
     align-items: flex-end;
+
     padding: 0;
+
     background: transparent;
   }
 
