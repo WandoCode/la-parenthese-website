@@ -817,6 +817,10 @@ body {
   }
 }
 
+.massages-pg .h1 {
+  margin-bottom: 4rem;
+}
+
 /**
  * Main content containers
  * 1. Make the container full-width with a maximum width
