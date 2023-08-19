@@ -748,6 +748,7 @@ body {
 }
 .massages__logo {
   width: 10%;
+  min-width: 30px;
   height: 80px;
   background-image: url("../public/lotus-item-sm.svg");
   background-repeat: no-repeat;
