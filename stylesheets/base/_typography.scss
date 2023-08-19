@@ -50,6 +50,13 @@ body {
     color: var(--clr-primary-400);
     font-style: italic;
   }
+
+  &--section {
+    font-family: $secondary-font-stack;
+    font-size: var(--fs-550);
+    font-weight: normal;
+    line-height: 171.5%; /* 2.5725rem */
+  }
 }
 
 .h2 {
@@ -89,4 +96,11 @@ body {
   &--sm {
     font-weight: normal;
   }
+}
+
+.massages__btn {
+  font-size: 1.25rem;
+  line-height: 171.5%; /* 2.14375rem */
+  letter-spacing: 0.21875rem;
+  text-align: start;
 }

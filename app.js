@@ -1,3 +1,6 @@
+import burgerImg from './public/burger_menu.svg'
+import closeImg from './public/close.svg'
+
 const menuButton = document.getElementById('open-menu-btn')
 
 const headerNav = document.getElementsByClassName('header__nav')[0]
@@ -104,8 +107,8 @@ function toggleMenuButtonListener() {
 
 function toggleMenuButtonImage() {
   menuButton.getElementsByTagName('img')[0].src = burgerMenuIsOpen
-    ? '/public/close.svg'
-    : '/public/burger_menu.svg'
+    ? closeImg
+    : burgerImg
 }
 
 function toogleMenuIsFocusable() {
