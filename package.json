@@ -6,11 +6,7 @@
       "distDir": "./docs"
     }
   },
-  "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
-    "server": "parcel serve"
-  },
+  "scripts": {},
   "devDependencies": {
     "parcel": "latest"
   }
