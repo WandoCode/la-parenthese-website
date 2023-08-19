@@ -357,7 +357,7 @@ body {
 }
 
 .massages__btn {
-  font-size: 1.25rem;
+  font-size: calc(0.875rem + 1.6vw);
   line-height: 171.5%; /* 2.14375rem */
   letter-spacing: 0.21875rem;
   text-align: start;
@@ -818,7 +818,7 @@ body {
 }
 
 .massages-pg .h1 {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 /**
