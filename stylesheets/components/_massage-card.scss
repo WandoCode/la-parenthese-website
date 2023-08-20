@@ -1,0 +1,20 @@
+@use '../abstracts/' as *;
+
+.massage-card {
+  &__img {
+    min-width: 100%;
+  }
+
+  &__container {
+    width: $main-width-sm;
+
+    margin-inline: auto;
+  }
+  &__description {
+    width: $main-width-sm;
+
+    margin-inline: auto;
+  }
+  &__cta-container {
+  }
+}
