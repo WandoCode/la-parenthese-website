@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+.massages {
+  & .h1 {
+    margin-bottom: in-rem(48);
+  }
+
+  &__list {
+    width: min(100% - 1rem - 6vw, 930px);
+
+    margin-inline: auto;
+  }
+}
