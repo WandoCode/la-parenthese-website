@@ -752,7 +752,7 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 .massage__logo {
   position: absolute;
@@ -775,12 +775,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  transition-delay: 0.15s;
-  transition-duration: 0.5s;
+  transition-delay: 0.1s;
+  transition-duration: 0.4s;
   opacity: 0.8;
 }
 .massage__text {
-  max-width: 80%;
+  max-width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
