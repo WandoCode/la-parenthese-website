@@ -767,10 +767,8 @@ body {
 }
 .massage__close-btn {
   position: absolute;
-  inset: 0;
   transform: translateX(-100%);
-  width: 10%;
-  min-width: 30px;
+  width: 30px;
   height: 80px;
   background-image: url("../public/close.svg");
   background-repeat: no-repeat;

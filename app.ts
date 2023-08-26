@@ -1,12 +1,20 @@
 import burgerImg from './public/burger_menu.svg'
 import closeImg from './public/close.svg'
 
-const menuButton = document.getElementById('open-menu-btn')
+const menuButton = document.getElementById('open-menu-btn') as HTMLButtonElement
 
-const headerNav = document.getElementsByClassName('header__nav')[0]
-const headerFirst = document.getElementsByClassName('header__first')[0]
-const logoFull = document.getElementsByClassName('logo__full')[0]
-const logoIcon = document.getElementsByClassName('logo__icon')[0]
+const headerNav = document.getElementsByClassName(
+  'header__nav'
+)[0] as HTMLElement
+const headerFirst = document.getElementsByClassName(
+  'header__first'
+)[0] as HTMLDivElement
+const logoFull = document.getElementsByClassName(
+  'logo__full'
+)[0] as HTMLImageElement
+const logoIcon = document.getElementsByClassName(
+  'logo__icon'
+)[0] as HTMLImageElement
 
 let burgerMenuIsOpen = false
 let screenSizeIsMobile = window.screen.width < 1024
@@ -51,13 +59,15 @@ function toggleMainNav() {
 }
 
 function markActiveNavLinks() {
-  const navsLinks = document.querySelectorAll('nav a')
+  const navsLinks = document.querySelectorAll(
+    'nav a'
+  ) as NodeListOf<HTMLAnchorElement>
   const currentUrl = window.location.href
 
   for (let i = 0; i < navsLinks.length; i++) {
-    const a = navsLinks[i]
-    if (a.href === currentUrl) {
-      a.classList.toggle('current')
+    const link = navsLinks[i]
+    if (link.href === currentUrl) {
+      link.classList.toggle('current')
     }
   }
 }
@@ -133,7 +143,7 @@ function toggleAccessibilityDescriptions() {
   hiddenText.innerText = burgerMenuIsOpen
     ? 'Close navigation'
     : 'Open navigation'
-  menuButton.ariaExpanded = burgerMenuIsOpen
+  menuButton.ariaExpanded = `${burgerMenuIsOpen}`
 }
 
 function onkeydown(e) {

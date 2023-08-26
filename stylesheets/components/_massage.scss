@@ -41,15 +41,6 @@
     border: none;
 
     background-color: transparent;
-
-    // &--show-close {
-    //   & .massage__container {
-    //     transform: translateX(15%);
-    //   }
-
-    //   & .massage__text {
-    //   }
-    // }
   }
 
   &__container {
@@ -58,9 +49,6 @@
 
     height: 100%;
     transition: 0.5s;
-  }
-
-  &__text {
   }
 
   &__logo {
@@ -80,10 +68,8 @@
 
   &__close-btn {
     position: absolute;
-    inset: 0;
     transform: translateX(-100%);
-    width: 10%;
-    min-width: 30px;
+    width: 30px;
     height: 80px;
 
     background-image: url('../public/close.svg');
