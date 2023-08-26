@@ -68,8 +68,8 @@
 
   &__close-btn {
     position: absolute;
-    transform: translateX(-100%);
-    width: 30px;
+    transform: translateX(-150%);
+    width: 20px;
     height: 80px;
 
     background-image: url('../public/close.svg');
@@ -77,6 +77,15 @@
     background-position: center;
     background-size: contain;
 
-    transition: 0.5s;
+    transition-delay: 0.15s;
+    transition-duration: 0.5s;
+    opacity: 0.8;
+  }
+
+  &__text {
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

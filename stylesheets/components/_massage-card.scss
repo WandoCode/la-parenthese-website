@@ -1,9 +1,13 @@
 @use '../abstracts/' as *;
 
 .massage-card {
-  display: none;
+  height: 0;
+  overflow-y: hidden;
+
+  transition: 0.5s;
   &__img {
     min-width: 100%;
+    border-radius: 4px;
   }
 
   &__container {

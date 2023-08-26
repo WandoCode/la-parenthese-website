@@ -8,5 +8,7 @@
   &__list {
     width: $main-width-sm;
     margin-inline: auto;
+
+    min-height: 400px;
   }
 }

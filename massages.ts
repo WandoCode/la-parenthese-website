@@ -57,13 +57,14 @@ function openMassageDetails(
   closeBtn: HTMLSpanElement,
   btnText: HTMLSpanElement
 ) {
-  infos.style.display = 'block'
+  infos.style.height = '800px'
+
   button.ariaExpanded = 'true'
   btnContainer.style.transform = `translateX(${
     button.offsetWidth - btnText.offsetWidth
   }px)`
 
-  closeBtn.style.transform = `translateX(0)`
+  closeBtn.style.transform = `translateX(10%)`
 }
 
 function closeMassageDetails(
@@ -72,8 +73,8 @@ function closeMassageDetails(
   btnContainer: HTMLDivElement,
   closeBtn: HTMLSpanElement
 ) {
-  infos.style.display = 'none'
+  infos.style.height = '0'
   button.ariaExpanded = 'false'
   btnContainer.style.transform = `translateX(0)`
-  closeBtn.style.transform = `translateX(-100%)`
+  closeBtn.style.transform = `translateX(-150%)`
 }

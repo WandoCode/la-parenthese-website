@@ -362,6 +362,7 @@ body {
   letter-spacing: 0.21875rem;
   text-align: start;
   font-weight: normal;
+  color: var(--clr-primary-800);
 }
 
 .footer {
@@ -767,21 +768,32 @@ body {
 }
 .massage__close-btn {
   position: absolute;
-  transform: translateX(-100%);
-  width: 30px;
+  transform: translateX(-150%);
+  width: 20px;
   height: 80px;
   background-image: url("../public/close.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  transition: 0.5s;
+  transition-delay: 0.15s;
+  transition-duration: 0.5s;
+  opacity: 0.8;
+}
+.massage__text {
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .massage-card {
-  display: none;
+  height: 0;
+  overflow-y: hidden;
+  transition: 0.5s;
 }
 .massage-card__img {
   min-width: 100%;
+  border-radius: 4px;
 }
 .massage-card__container {
   width: min(100% - 1rem - 6vw, 930px);
@@ -859,6 +871,7 @@ body {
 .massages__list {
   width: min(100% - 1rem - 6vw, 930px);
   margin-inline: auto;
+  min-height: 400px;
 }
 
 /**
