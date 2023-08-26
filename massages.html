@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <script src="./app.js" defer type="module"></script>
+    <script src="./massages.ts" defer type="module"></script>
     <title>Les massages - La Parenthèse Enchantée</title>
   </head>
   <body>
@@ -71,14 +72,14 @@
       </nav>
     </header>
     <main class="main massages">
-      <section class="main__body">
+      <article class="main__body">
         <img
           class="show-desktop main__illustration"
           src="./public/bottle-salt-lg.png"
           alt="Small bottle of essential oil on blue cristals with camomile and lavender"
         />
 
-        <div class="main__text">
+        <div class="main__content">
           <h1 class="h1 h1--section">Les massages</h1>
           <img
             class="hide-desktop home__illustration main__illustration"
@@ -86,50 +87,194 @@
             alt="Small bottle of essential oil on blue cristals with camomile and lavender"
           />
           <div class="massages__list">
-            <article class="massage">
-              <h2 aria-labelledby="massage1">
-                <button
-                  class="massage__btn"
-                  aria-label="Open/Close the details of the massage"
-                >
-                  <!-- TODO:Noter que les details sont visibles ou non dans le bouton -->
-                  <!-- TODO: ajouter les détails après le bouton + les montrer/cacher avec JS -->
-                  <span class="massage__container">
-                    <span class="massage__text" id="massage1"
-                      >Massage des 5 contients</span
-                    >
-                    <span class="massage__logo"></span>
-                  </span>
-                </button>
-              </h2>
-            </article>
-            <article class="massage">
-              <h2 aria-labelledby="massage2">
-                <button class="massage__btn">
-                  <span class="massage__container">
-                    <span class="massage__text" id="massage2"
-                      >Massage harmonisant</span
-                    >
-                    <span class="massage__logo"></span>
-                  </span>
-                </button>
-              </h2>
-            </article>
-            <article class="massage">
-              <h2 aria-labelledby="massage3">
-                <button class="massage__btn">
-                  <span class="massage__container">
-                    <span class="massage__text" id="massage3">
-                      Power legs <span>(+booty)</span>
+            <section class="massage">
+              <header>
+                <h2 aria-labelledby="massage1">
+                  <button
+                    class="massage__main-btn"
+                    aria-label="Open/Close the details of the massage"
+                    aria-expanded="false"
+                  >
+                    <!-- TODO:Noter que les details sont visibles ou non dans le bouton => aria -->
+                    <!-- TODO: ajouter les détails après le bouton + les montrer/cacher avec JS -->
+                    <span class="massage__close-btn"></span>
+                    <span class="massage__container">
+                      <span class="massage__text" id="massage1">
+                        Massage des 5 contients
+                      </span>
+                      <span class="massage__logo"></span>
                     </span>
-                    <span class="massage__logo"></span>
-                  </span>
-                </button>
-              </h2>
-            </article>
+                  </button>
+                </h2>
+              </header>
+              <div class="massage-card">
+                <div class="massage-card__infos">
+                  <img
+                    class="massage-card__img"
+                    src="./public/wellness.png"
+                    alt="Woman being massaged"
+                  />
+                  <div class="massage-card__container">
+                    <div class="massage-card__datas">
+                      <div class="massage-card__time">2h + 20min.</div>
+                      <div class="massage-card__price">60€</div>
+                    </div>
+                    <ul class="massage-card__features">
+                      <li class="massage-card__feature">Relaxant</li>
+                      <li class="massage-card__feature">
+                        Dos, tête et épaules
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="massage-card__description">
+                  <p>
+                    Découvrez le massage des 5 continents, une expérience idéale
+                    pour ceux qui exercent des métiers exigeants. Ce massage
+                    complet agit simultanément sur le corps, l'esprit et les
+                    émotions en combinant les bienfaits des techniques de
+                    massage californien, lomi-lomi, ayurvédique, suédois, tuina
+                    et d'acupression.
+                  </p>
+
+                  <p>
+                    Profitez des effets bénéfiques tels que la détoxification,
+                    la libération des tensions, la revitalisation et le
+                    renforcement de vos défenses immunitaires grâce à cette
+                    pratique unique. Un véritable voyage au cœur du bien-être et
+                    du lâcher-prise vous attend.
+                  </p>
+                </div>
+                <div class="massage-card__cta-container">
+                  <a class="btn btn--primary btn--sm">Réserver</a>
+                </div>
+              </div>
+            </section>
+            <section class="massage">
+              <header>
+                <h2 aria-labelledby="massage2">
+                  <button
+                    class="massage__main-btn"
+                    aria-label="Open/Close the details of the massage"
+                    aria-expanded="false"
+                  >
+                    <span class="massage__close-btn"></span>
+                    <span class="massage__container">
+                      <span class="massage__text" id="massage2">
+                        Massage harmonisant
+                      </span>
+                      <span class="massage__logo"></span>
+                    </span>
+                  </button>
+                </h2>
+              </header>
+              <div class="massage-card">
+                <div class="massage-card__infos">
+                  <img
+                    class="massage-card__img"
+                    src="./public/wellness.png"
+                    alt="Woman being massaged"
+                  />
+                  <div class="massage-card__container">
+                    <div class="massage-card__datas">
+                      <div class="massage-card__time">2h + 20min.</div>
+                      <div class="massage-card__price">60€</div>
+                    </div>
+                    <ul class="massage-card__features">
+                      <li class="massage-card__feature">Relaxant</li>
+                      <li class="massage-card__feature">
+                        Dos, tête et épaules
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="massage-card__description">
+                  <p>
+                    Découvrez le massage des 5 continents, une expérience idéale
+                    pour ceux qui exercent des métiers exigeants. Ce massage
+                    complet agit simultanément sur le corps, l'esprit et les
+                    émotions en combinant les bienfaits des techniques de
+                    massage californien, lomi-lomi, ayurvédique, suédois, tuina
+                    et d'acupression.
+                  </p>
+
+                  <p>
+                    Profitez des effets bénéfiques tels que la détoxification,
+                    la libération des tensions, la revitalisation et le
+                    renforcement de vos défenses immunitaires grâce à cette
+                    pratique unique. Un véritable voyage au cœur du bien-être et
+                    du lâcher-prise vous attend.
+                  </p>
+                </div>
+                <div class="massage-card__cta-container">
+                  <a class="btn btn--primary btn--sm">Réserver</a>
+                </div>
+              </div>
+            </section>
+            <section class="massage">
+              <header>
+                <h2 aria-labelledby="massage3">
+                  <button
+                    class="massage__main-btn"
+                    aria-label="Open/Close the details of the massage"
+                    aria-expanded="false"
+                  >
+                    <span class="massage__close-btn"></span>
+                    <span class="massage__container">
+                      <span class="massage__text" id="massage3">
+                        Power legs <span>(+booty)</span>
+                      </span>
+                      <span class="massage__logo"></span>
+                    </span>
+                  </button>
+                </h2>
+              </header>
+              <div class="massage-card">
+                <div class="massage-card__infos">
+                  <img
+                    class="massage-card__img"
+                    src="./public/wellness.png"
+                    alt="Woman being massaged"
+                  />
+                  <div class="massage-card__container">
+                    <div class="massage-card__datas">
+                      <div class="massage-card__time">2h + 20min.</div>
+                      <div class="massage-card__price">60€</div>
+                    </div>
+                    <ul class="massage-card__features">
+                      <li class="massage-card__feature">Relaxant</li>
+                      <li class="massage-card__feature">
+                        Dos, tête et épaules
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="massage-card__description">
+                  <p>
+                    Découvrez le massage des 5 continents, une expérience idéale
+                    pour ceux qui exercent des métiers exigeants. Ce massage
+                    complet agit simultanément sur le corps, l'esprit et les
+                    émotions en combinant les bienfaits des techniques de
+                    massage californien, lomi-lomi, ayurvédique, suédois, tuina
+                    et d'acupression.
+                  </p>
+
+                  <p>
+                    Profitez des effets bénéfiques tels que la détoxification,
+                    la libération des tensions, la revitalisation et le
+                    renforcement de vos défenses immunitaires grâce à cette
+                    pratique unique. Un véritable voyage au cœur du bien-être et
+                    du lâcher-prise vous attend.
+                  </p>
+                </div>
+                <div class="massage-card__cta-container">
+                  <a class="btn btn--primary btn--sm">Réserver</a>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
+      </article>
     </main>
     <footer class="footer">
       <div class="footer__container">

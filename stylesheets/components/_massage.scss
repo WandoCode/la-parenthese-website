@@ -10,6 +10,14 @@
     )
     1;
 
+  & header {
+    height: 80px;
+  }
+
+  & h2 {
+    height: 100%;
+  }
+
   @include breakpoint('large') {
     padding-inline: 1rem;
   }
@@ -21,23 +29,45 @@
     background-size: contain;
   }
 
-  &__btn {
+  &__main-btn {
+    position: relative;
+
     width: 100%;
+    height: 100%;
 
     padding: 0;
 
+    overflow: hidden;
     border: none;
 
     background-color: transparent;
+
+    // &--show-close {
+    //   & .massage__container {
+    //     transform: translateX(15%);
+    //   }
+
+    //   & .massage__text {
+    //   }
+    // }
   }
 
   &__container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
+    height: 100%;
+    transition: 0.5s;
+  }
+
+  &__text {
   }
 
   &__logo {
+    position: absolute;
+    translate: -100% 0;
+    left: 100%;
+
     width: 10%;
     min-width: 30px;
     height: 80px;
@@ -46,5 +76,21 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+  }
+
+  &__close-btn {
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    width: 10%;
+    min-width: 30px;
+    height: 80px;
+
+    background-image: url('../public/close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: 0.5s;
   }
 }

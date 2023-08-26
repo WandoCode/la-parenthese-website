@@ -356,7 +356,7 @@ body {
   font-weight: normal;
 }
 
-.massage__btn {
+.massage__main-btn {
   font-size: calc(0.875rem + 1.6vw);
   line-height: 171.5%; /* 2.14375rem */
   letter-spacing: 0.21875rem;
@@ -617,14 +617,14 @@ body {
   }
 }
 @media (min-width: 64rem) {
-  .main__text {
+  .main__content {
     position: relative;
     flex-basis: 50%;
     background-image: url("../public/bubble-background-desktop.svg");
     background-position: center center;
     background-repeat: no-repeat space;
   }
-  .main__text:after {
+  .main__content:after {
     content: "";
     position: absolute;
     top: -20%;
@@ -721,6 +721,12 @@ body {
   -o-border-image: radial-gradient(circle, rgba(7, 75, 79, 0.25) 0%, rgba(7, 75, 79, 0) 100%) 1;
      border-image: radial-gradient(circle, rgba(7, 75, 79, 0.25) 0%, rgba(7, 75, 79, 0) 100%) 1;
 }
+.massage header {
+  height: 80px;
+}
+.massage h2 {
+  height: 100%;
+}
 @media (min-width: 64rem) {
   .massage {
     padding-inline: 1rem;
@@ -732,18 +738,25 @@ body {
   background-position: center;
   background-size: contain;
 }
-.massage__btn {
+.massage__main-btn {
+  position: relative;
   width: 100%;
+  height: 100%;
   padding: 0;
+  overflow: hidden;
   border: none;
   background-color: transparent;
 }
 .massage__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  height: 100%;
+  transition: 0.5s;
 }
 .massage__logo {
+  position: absolute;
+  translate: -100% 0;
+  left: 100%;
   width: 10%;
   min-width: 30px;
   height: 80px;
@@ -752,7 +765,34 @@ body {
   background-position: center;
   background-size: contain;
 }
+.massage__close-btn {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  width: 10%;
+  min-width: 30px;
+  height: 80px;
+  background-image: url("../public/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 0.5s;
+}
 
+.massage-card {
+  display: none;
+}
+.massage-card__img {
+  min-width: 100%;
+}
+.massage-card__container {
+  width: min(100% - 1rem - 6vw, 930px);
+  margin-inline: auto;
+}
+.massage-card__description {
+  width: min(100% - 1rem - 6vw, 930px);
+  margin-inline: auto;
+}
 .home {
   display: flex;
   flex-direction: column;

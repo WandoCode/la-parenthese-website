@@ -26,3 +26,4 @@ $body-background-desktop: radial-gradient(
 );
 
 $main-width: min(100%, 1600px);
+$main-width-sm: min(100% - 1rem - 6vw, 930px);
