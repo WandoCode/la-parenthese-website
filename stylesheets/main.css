@@ -780,7 +780,7 @@ body {
   opacity: 0.8;
 }
 .massage__text {
-  max-width: 90%;
+  max-width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
