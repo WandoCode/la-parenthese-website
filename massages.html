@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,8 @@
           id="open-menu-btn"
           aria-label="Open navigation"
           aria-expanded="false"
-          aria-haspopup="menu"
+          aria-haspopup="true"
+          aria-pressed="false"
         >
           <span class="visually-hidden">Open navigation</span>
           <img
@@ -51,7 +52,7 @@
           </a>
         </div>
       </div>
-      <nav class="header__nav nav" id="main-nav" aria-label="main menu">
+      <nav class="header__nav nav" id="main-nav" aria-description="main menu">
         <ul class="nav__list">
           <li>
             <a class="nav__link" href="/">Accueil</a>
@@ -94,7 +95,8 @@
                     class="massage__main-btn"
                     aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
-                    aria-haspopup="massage1-card"
+                    aria-haspopup="true"
+                    aria-pressed="false"
                   >
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
@@ -106,19 +108,31 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card" id="massage1-card" aria-hidden="true">
+              <div class="massage-card" aria-hidden="true">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
                     src="./public/wellness.png"
                     alt="Woman being massaged"
                   />
+
                   <div class="massage-card__container">
+                    <h3 class="visually-hidden">
+                      Principales caractéristiques du massage
+                    </h3>
                     <div class="massage-card__datas">
-                      <div class="massage-card__time">2h + 20min.</div>
-                      <div class="massage-card__price">60€</div>
+                      <div class="massage-card__time">
+                        <span class="visually-hidden">Durée:</span>2h + 20min.
+                      </div>
+                      <div class="massage-card__price">
+                        <span class="visually-hidden">Prix:</span>60 €
+                      </div>
                     </div>
-                    <ul class="massage-card__features">
+
+                    <ul
+                      class="massage-card__features"
+                      aria-label="Massage main features"
+                    >
                       <li class="massage-card__feature">Relaxant</li>
                       <li class="massage-card__feature">
                         Dos, tête et épaules
@@ -127,6 +141,7 @@
                   </div>
                 </div>
                 <div class="massage-card__description">
+                  <h3 class="visually-hidden">Description du massage</h3>
                   <p>
                     Découvrez le massage des 5 continents, une expérience idéale
                     pour ceux qui exercent des métiers exigeants. Ce massage
@@ -146,8 +161,8 @@
                 </div>
                 <div class="massage-card__cta-container">
                   <a
-                    href="./reservation.html"
                     tabindex="-1"
+                    href="./reservation.html"
                     class="massage-card__btn btn btn--primary btn--sm"
                   >
                     Réserver
@@ -162,7 +177,8 @@
                     class="massage__main-btn"
                     aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
-                    aria-haspopup="massage2-card"
+                    aria-haspopup="true"
+                    aria-pressed="false"
                   >
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
@@ -174,7 +190,7 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card" id="massage2-card" aria-hidden="true">
+              <div class="massage-card" aria-hidden="true">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
@@ -187,17 +203,11 @@
                       Principales caractéristiques du massage
                     </h3>
                     <div class="massage-card__datas">
-                      <div
-                        class="massage-card__time"
-                        aria-label="Massage duration"
-                      >
-                        2h + 20min.
+                      <div class="massage-card__time">
+                        <span class="visually-hidden">Durée:</span>2h + 20min.
                       </div>
-                      <div
-                        class="massage-card__price"
-                        aria-label="Massage price"
-                      >
-                        60 €
+                      <div class="massage-card__price">
+                        <span class="visually-hidden">Prix:</span>60 €
                       </div>
                     </div>
 
@@ -249,7 +259,8 @@
                     class="massage__main-btn"
                     aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
-                    aria-haspopup="massage3-card"
+                    aria-haspopup="true"
+                    aria-pressed="false"
                   >
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
@@ -261,19 +272,31 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card" id="massage3-card" aria-hidden="true">
+              <div class="massage-card" aria-hidden="true">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
                     src="./public/wellness.png"
                     alt="Woman being massaged"
                   />
+
                   <div class="massage-card__container">
+                    <h3 class="visually-hidden">
+                      Principales caractéristiques du massage
+                    </h3>
                     <div class="massage-card__datas">
-                      <div class="massage-card__time">2h + 20min.</div>
-                      <div class="massage-card__price">60€</div>
+                      <div class="massage-card__time">
+                        <span class="visually-hidden">Durée:</span>2h + 20min.
+                      </div>
+                      <div class="massage-card__price">
+                        <span class="visually-hidden">Prix:</span>60 €
+                      </div>
                     </div>
-                    <ul class="massage-card__features">
+
+                    <ul
+                      class="massage-card__features"
+                      aria-label="Massage main features"
+                    >
                       <li class="massage-card__feature">Relaxant</li>
                       <li class="massage-card__feature">
                         Dos, tête et épaules
@@ -282,6 +305,7 @@
                   </div>
                 </div>
                 <div class="massage-card__description">
+                  <h3 class="visually-hidden">Description du massage</h3>
                   <p>
                     Découvrez le massage des 5 continents, une expérience idéale
                     pour ceux qui exercent des métiers exigeants. Ce massage

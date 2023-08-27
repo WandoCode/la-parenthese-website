@@ -144,6 +144,7 @@ function toggleAccessibilityDescriptions() {
     ? 'Close navigation'
     : 'Open navigation'
   menuButton.ariaExpanded = `${burgerMenuIsOpen}`
+  menuButton.ariaPressed = `${burgerMenuIsOpen}`
 }
 
 function onkeydown(e) {

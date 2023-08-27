@@ -62,6 +62,7 @@ function openMassageDetails(dynamicElements: DynamicElements) {
   } = dynamicElements
   massageDetails.style.height = '920px'
   massageDetails.ariaHidden = 'false'
+  massageDetails.ariaPressed = 'false'
 
   massageButton.ariaExpanded = 'true'
   buttonContainer.style.transform = `translateX(${
@@ -82,6 +83,7 @@ function closeMassageDetails(dynamicElements: DynamicElements) {
   } = dynamicElements
   massageDetails.style.height = '0'
   massageDetails.ariaHidden = 'true'
+  massageDetails.ariaPressed = 'true'
 
   massageButton.ariaExpanded = 'false'
   buttonContainer.style.transform = `translateX(0)`
