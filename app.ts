@@ -1,5 +1,5 @@
 import burgerImg from './public/burger_menu.svg'
-import closeImg from './public/close.svg'
+import closeImg from './public/close-primary.svg'
 
 const menuButton = document.getElementById('open-menu-btn') as HTMLButtonElement
 

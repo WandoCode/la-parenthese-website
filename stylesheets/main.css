@@ -3,7 +3,7 @@
   --clr-primary-400: hsl(183, 70%, 36%);
   --clr-primary-600: hsl(183, 84%, 17%);
   --clr-primary-700: hsl(183, 46%, 16%);
-  --clr-primary-800: hsl(183, 44%, 11%);
+  --clr-primary-800: hsl(183, 43%, 11%);
   --clr-primary-900: hsl(183, 43%, 11%);
   --clr-secondary-300: hsl(24, 50%, 45%);
   --clr-secondary-400: hsl(24, 100%, 31%);
@@ -27,7 +27,7 @@
   color: hsl(183, 46%, 16%);
 }
 :root .fc-primary-800 {
-  color: hsl(183, 44%, 11%);
+  color: hsl(183, 43%, 11%);
 }
 :root .fc-primary-900 {
   color: hsl(183, 43%, 11%);
@@ -363,6 +363,21 @@ body {
   text-align: start;
   font-weight: normal;
   color: var(--clr-primary-800);
+}
+
+.massage-card {
+  font-size: var(--fs-300);
+  letter-spacing: 0.1rem;
+}
+.massage-card__datas {
+  line-height: 128%;
+}
+.massage-card__features {
+  line-height: 171.5%;
+  list-style: disc;
+}
+.massage-card__description {
+  line-height: 150.5%;
 }
 
 .footer {
@@ -769,7 +784,7 @@ body {
 .massage__close-btn {
   position: absolute;
   transform: translateX(-150%);
-  width: 20px;
+  width: 15px;
   height: 80px;
   background-image: url("../public/close.svg");
   background-repeat: no-repeat;
@@ -796,13 +811,50 @@ body {
   border-radius: 4px;
 }
 .massage-card__container {
-  width: min(100% - 1rem - 6vw, 930px);
-  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.massage-card__datas {
+  align-self: flex-end;
+  display: grid;
+  gap: 0.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 1.8rem;
+}
+.massage-card__time {
+  position: relative;
+}
+.massage-card__time:before {
+  content: url("../public/time.svg");
+  position: absolute;
+  right: 100%;
+  translate: calc(50% - 1em);
+}
+.massage-card__price {
+  position: relative;
+}
+.massage-card__price:before {
+  content: url("../public/euro.svg");
+  position: absolute;
+  right: 100%;
+  translate: calc(50% - 1rem);
+}
+.massage-card__features {
+  margin-top: 0.75rem;
+  margin-left: 1.1rem;
 }
 .massage-card__description {
-  width: min(100% - 1rem - 6vw, 930px);
-  margin-inline: auto;
+  margin-top: 1.5rem;
 }
+.massage-card__cta-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 2.5rem;
+}
+
 .home {
   display: flex;
   flex-direction: column;

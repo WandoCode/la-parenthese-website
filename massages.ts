@@ -55,7 +55,7 @@ function openMassageDetails(
   closeBtn: HTMLSpanElement,
   btnText: HTMLSpanElement
 ) {
-  infos.style.height = '800px'
+  infos.style.height = '920px'
 
   button.ariaExpanded = 'true'
   btnContainer.style.transform = `translateX(${

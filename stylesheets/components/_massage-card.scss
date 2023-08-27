@@ -11,16 +11,56 @@
   }
 
   &__container {
-    width: $main-width-sm;
-
-    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  &__description {
-    width: $main-width-sm;
 
-    margin-inline: auto;
+  &__datas {
+    align-self: flex-end;
+
+    display: grid;
+    gap: in-rem(4);
+
+    width: fit-content;
+
+    margin-top: 1.8rem;
+  }
+
+  &__time {
+    position: relative;
+
+    &:before {
+      content: url('../public/time.svg');
+      position: absolute;
+      right: 100%;
+      translate: calc(50% - 1em);
+    }
+  }
+
+  &__price {
+    position: relative;
+
+    &:before {
+      content: url('../public/euro.svg');
+      position: absolute;
+      right: 100%;
+      translate: calc(50% - 1rem);
+    }
+  }
+
+  &__features {
+    margin-top: 0.75rem;
+    margin-left: 1.1rem;
+  }
+
+  &__description {
+    margin-top: 1.5rem;
   }
 
   &__cta-container {
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 2.5rem;
   }
 }
