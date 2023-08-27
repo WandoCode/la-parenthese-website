@@ -10,16 +10,15 @@
     )
     1;
 
+  @include breakpoint('large') {
+  }
+
   & header {
     height: 80px;
   }
 
   & h2 {
     height: 100%;
-  }
-
-  @include breakpoint('large') {
-    padding-inline: 1rem;
   }
 
   &:hover .massage__logo {
@@ -41,6 +40,8 @@
     border: none;
 
     background-color: transparent;
+
+    cursor: pointer;
   }
 
   &__container {
@@ -48,7 +49,12 @@
     align-items: center;
 
     height: 100%;
+
     transition: 0.8s;
+
+    @include breakpoint('large') {
+      transition: 1.5s;
+    }
   }
 
   &__logo {
@@ -64,6 +70,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    @include breakpoint('large') {
+      height: 2rem;
+    }
   }
 
   &__close-btn {
@@ -80,6 +90,10 @@
     transition-delay: 0.1s;
     transition-duration: 0.4s;
     opacity: 0.8;
+
+    @include breakpoint('large') {
+      width: 20px;
+    }
   }
 
   &__text {

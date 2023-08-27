@@ -107,6 +107,7 @@
     @include breakpoint('large') {
       position: relative;
 
+      margin-right: 1rem;
       translate: 0;
 
       background: transparent;

@@ -56,6 +56,10 @@ body {
     font-size: var(--fs-550);
     font-weight: normal;
     line-height: 171.5%; /* 2.5725rem */
+
+    @include breakpoint('large') {
+      text-align: end;
+    }
   }
 }
 
@@ -105,6 +109,10 @@ body {
   text-align: start;
   font-weight: normal;
   color: var(--clr-primary-800);
+
+  @include breakpoint('large') {
+    font-size: 2rem;
+  }
 }
 
 .massage-card {

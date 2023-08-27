@@ -1,5 +1,6 @@
 import burgerImg from './public/burger_menu.svg'
 import closeImg from './public/close-primary.svg'
+import { screenSizeIsMobile } from './helpers'
 
 const menuButton = document.getElementById('open-menu-btn') as HTMLButtonElement
 
@@ -17,7 +18,6 @@ const logoIcon = document.getElementsByClassName(
 )[0] as HTMLImageElement
 
 let burgerMenuIsOpen = false
-let screenSizeIsMobile = window.screen.width < 1024
 
 markActiveNavLinks()
 
@@ -88,7 +88,6 @@ function handleScroll() {
 
 function handleWindowResize() {
   const precValScreenSizeIsMobile = screenSizeIsMobile
-  screenSizeIsMobile = window.screen.width < 1024
 
   if (precValScreenSizeIsMobile !== screenSizeIsMobile) {
     toogleMenuIsFocusable()

@@ -3,12 +3,21 @@
 .massages {
   & .h1 {
     margin-bottom: in-rem(48);
+
+    @include breakpoint('large') {
+      margin-bottom: in-rem(24);
+    }
   }
 
   &__list {
     width: $main-width-sm;
     margin-inline: auto;
 
-    min-height: 400px;
+    min-height: in-rem(400);
+
+    @include breakpoint('large') {
+      width: auto;
+      overflow-y: scroll;
+    }
   }
 }

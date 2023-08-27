@@ -1,3 +1,5 @@
+import { screenSizeIsMobile } from './helpers'
+
 const massagesButton = document.getElementsByClassName(
   'massage__main-btn'
 ) as HTMLCollectionOf<HTMLButtonElement>
@@ -60,17 +62,24 @@ function openMassageDetails(dynamicElements: DynamicElements) {
     closeButton,
     reservationButton,
   } = dynamicElements
-  massageDetails.style.height = '920px'
+
   massageDetails.ariaHidden = 'false'
   massageDetails.ariaPressed = 'false'
 
   massageButton.ariaExpanded = 'true'
-  buttonContainer.style.transform = `translateX(${
-    massageButton.offsetWidth - buttonText.offsetWidth
-  }px)`
 
   closeButton.style.transform = `translateX(10%)`
   reservationButton.tabIndex = 0
+  if (screenSizeIsMobile) {
+    massageDetails.style.height = '920px'
+
+    buttonContainer.style.transform = `translateX(${
+      massageButton.offsetWidth - buttonText.offsetWidth
+    }px)`
+  } else {
+    massageDetails.style.height = '650px'
+    buttonContainer.style.transform = `translateX(10%)`
+  }
 }
 
 function closeMassageDetails(dynamicElements: DynamicElements) {

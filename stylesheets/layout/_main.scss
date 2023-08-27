@@ -15,6 +15,7 @@
   @include breakpoint('large') {
     padding-top: in-rem(64);
     padding-bottom: 0;
+    margin-right: 1rem;
 
     background: none;
   }
@@ -22,12 +23,13 @@
   &__body {
     @include breakpoint('large') {
       display: flex;
-      gap: 2vw;
 
       height: calc(100vh - $header-height-desktop);
       width: $main-width;
 
       margin-inline: auto;
+
+      overflow: hidden;
     }
   }
 
@@ -68,9 +70,12 @@
 
   &__content {
     @include breakpoint('large') {
+      flex-basis: 50%;
+
       position: relative;
 
-      flex-basis: 50%;
+      display: grid;
+      grid-template-rows: min-content auto;
 
       background-image: url('../public/bubble-background-desktop.svg');
       background-position: center center;

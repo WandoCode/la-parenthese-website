@@ -1,4 +1,8 @@
 :root {
+  --scrollbar-width: calc(100vw - 100%);
+}
+
+:root {
   --clr-primary-300: hsl(183, 35%, 52%);
   --clr-primary-400: hsl(183, 70%, 36%);
   --clr-primary-600: hsl(183, 84%, 17%);
@@ -318,6 +322,11 @@ body {
   font-weight: normal;
   line-height: 171.5%; /* 2.5725rem */
 }
+@media (min-width: 64rem) {
+  .h1--section {
+    text-align: end;
+  }
+}
 
 .h2 {
   text-align: center;
@@ -363,6 +372,11 @@ body {
   text-align: start;
   font-weight: normal;
   color: var(--clr-primary-800);
+}
+@media (min-width: 64rem) {
+  .massage__main-btn {
+    font-size: 2rem;
+  }
 }
 
 .massage-card {
@@ -552,6 +566,7 @@ body {
 @media (min-width: 64rem) {
   .header__nav {
     position: relative;
+    margin-right: 1rem;
     translate: 0;
     background: transparent;
   }
@@ -589,16 +604,17 @@ body {
   .main {
     padding-top: 4rem;
     padding-bottom: 0;
+    margin-right: 1rem;
     background: none;
   }
 }
 @media (min-width: 64rem) {
   .main__body {
     display: flex;
-    gap: 2vw;
     height: calc(100vh - 4rem);
     width: min(100%, 1600px);
     margin-inline: auto;
+    overflow: hidden;
   }
 }
 .main:after {
@@ -634,8 +650,10 @@ body {
 }
 @media (min-width: 64rem) {
   .main__content {
-    position: relative;
     flex-basis: 50%;
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content auto;
     background-image: url("../public/bubble-background-desktop.svg");
     background-position: center center;
     background-repeat: no-repeat space;
@@ -746,11 +764,6 @@ body {
 .massage h2 {
   height: 100%;
 }
-@media (min-width: 64rem) {
-  .massage {
-    padding-inline: 1rem;
-  }
-}
 .massage:hover .massage__logo {
   background-image: url("../public/lotus-item-sm-hover.svg");
   background-repeat: no-repeat;
@@ -765,12 +778,18 @@ body {
   overflow: hidden;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .massage__container {
   display: flex;
   align-items: center;
   height: 100%;
   transition: 0.8s;
+}
+@media (min-width: 64rem) {
+  .massage__container {
+    transition: 1.5s;
+  }
 }
 .massage__logo {
   position: absolute;
@@ -783,6 +802,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+@media (min-width: 64rem) {
+  .massage__logo {
+    height: 2rem;
+  }
 }
 .massage__close-btn {
   position: absolute;
@@ -797,6 +821,11 @@ body {
   transition-duration: 0.4s;
   opacity: 0.8;
 }
+@media (min-width: 64rem) {
+  .massage__close-btn {
+    width: 20px;
+  }
+}
 .massage__text {
   max-width: 90%;
   overflow: hidden;
@@ -809,14 +838,34 @@ body {
   overflow-y: scroll;
   transition: 1s;
 }
+@media (min-width: 64rem) {
+  .massage-card {
+    overflow-y: hidden;
+  }
+}
 .massage-card__img {
   min-width: 100%;
   border-radius: 4px;
+}
+@media (min-width: 64rem) {
+  .massage-card__img {
+    min-width: auto;
+    width: 50%;
+  }
 }
 .massage-card__container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+@media (min-width: 64rem) {
+  .massage-card__container {
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: min-content auto;
+    align-items: center;
+    margin-inline: 2.5rem;
+  }
 }
 .massage-card__datas {
   align-self: flex-end;
@@ -825,6 +874,14 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 1.8rem;
+}
+@media (min-width: 64rem) {
+  .massage-card__datas {
+    justify-self: end;
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 0;
+  }
 }
 .massage-card__time {
   position: relative;
@@ -848,6 +905,11 @@ body {
   margin-top: 0.75rem;
   margin-left: 1.1rem;
 }
+@media (min-width: 64rem) {
+  .massage-card__features {
+    margin-top: 0;
+  }
+}
 .massage-card__description {
   margin-top: 1.5rem;
 }
@@ -859,6 +921,12 @@ body {
   width: fit-content;
   margin-inline: auto;
   margin-top: 2.5rem;
+}
+@media (min-width: 64rem) {
+  .massage-card__infos {
+    display: flex;
+    margin-top: 1rem;
+  }
 }
 
 .home {
@@ -926,10 +994,21 @@ body {
 .massages .h1 {
   margin-bottom: 3rem;
 }
+@media (min-width: 64rem) {
+  .massages .h1 {
+    margin-bottom: 1.5rem;
+  }
+}
 .massages__list {
   width: min(100% - 1rem - 6vw, 930px);
   margin-inline: auto;
-  min-height: 400px;
+  min-height: 25rem;
+}
+@media (min-width: 64rem) {
+  .massages__list {
+    width: auto;
+    overflow-y: scroll;
+  }
 }
 
 /**
