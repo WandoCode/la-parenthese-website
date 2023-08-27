@@ -70,6 +70,10 @@
       letter-spacing: 0.2rem;
     }
   }
+
+  &--disabled {
+    opacity: 50%;
+  }
 }
 
 // TODO: revoir l'animation hover des boutons

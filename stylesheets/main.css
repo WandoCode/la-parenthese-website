@@ -700,6 +700,9 @@ body {
     letter-spacing: 0.2rem;
   }
 }
+.btn--disabled {
+  opacity: 50%;
+}
 
 .nav {
   display: flex;
@@ -803,7 +806,7 @@ body {
 
 .massage-card {
   height: 0;
-  overflow-y: hidden;
+  overflow-y: scroll;
   transition: 1s;
 }
 .massage-card__img {
@@ -847,6 +850,9 @@ body {
 }
 .massage-card__description {
   margin-top: 1.5rem;
+}
+.massage-card__description > p:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 .massage-card__cta-container {
   width: -moz-fit-content;

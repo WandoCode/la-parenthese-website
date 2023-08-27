@@ -2,7 +2,7 @@
 
 .massage-card {
   height: 0;
-  overflow-y: hidden;
+  overflow-y: scroll;
 
   transition: 1s;
   &__img {
@@ -56,6 +56,10 @@
 
   &__description {
     margin-top: 1.5rem;
+
+    & > p:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
   }
 
   &__cta-container {
