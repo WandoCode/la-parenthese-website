@@ -789,7 +789,7 @@ body {
 .massage-card {
   height: 0;
   overflow-y: hidden;
-  transition: 0.5s;
+  transition: 1s;
 }
 .massage-card__img {
   min-width: 100%;

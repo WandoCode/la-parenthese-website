@@ -20,34 +20,32 @@ function main() {
   for (let i = 0; i < massagesButton.length; i++) {
     const massageButton = massagesButton[i]
 
-    massageButton.addEventListener('click', () => handlemassageBtnClick(i))
+    massageButton.addEventListener('click', () => handleMassageBtnClick(i))
   }
 }
 
-function handlemassageBtnClick(index: number) {
-  for (let i = 0; i < massagesButton.length; i++) {
-    const massageButton = massagesButton[i]
-    const massageDetails = massagesDetails[i]
-    const buttonText = buttonsText[i]
-    const buttonContainer = buttonsContainer[i]
-    const closeButton = closeButtons[i]
+function handleMassageBtnClick(index: number) {
+  const massageButton = massagesButton[index]
+  const massageDetails = massagesDetails[index]
+  const buttonText = buttonsText[index]
+  const buttonContainer = buttonsContainer[index]
+  const closeButton = closeButtons[index]
 
-    if (i !== index || massageButton.ariaExpanded === 'true')
-      closeMassageDetails(
-        massageButton,
-        massageDetails,
-        buttonContainer,
-        closeButton
-      )
-    else
-      openMassageDetails(
-        massageButton,
-        massageDetails,
-        buttonContainer,
-        closeButton,
-        buttonText
-      )
-  }
+  if (massageButton.ariaExpanded === 'false')
+    openMassageDetails(
+      massageButton,
+      massageDetails,
+      buttonContainer,
+      closeButton,
+      buttonText
+    )
+  else
+    closeMassageDetails(
+      massageButton,
+      massageDetails,
+      buttonContainer,
+      closeButton
+    )
 }
 
 function openMassageDetails(

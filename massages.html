@@ -92,11 +92,10 @@
                 <h2 aria-labelledby="massage1">
                   <button
                     class="massage__main-btn"
-                    aria-label="Open/Close the details of the massage"
+                    aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
+                    aria-haspopup="massage1-card"
                   >
-                    <!-- TODO:Noter que les details sont visibles ou non dans le bouton => aria -->
-                    <!-- TODO: ajouter les détails après le bouton + les montrer/cacher avec JS -->
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
                       <span class="massage__text" id="massage1">
@@ -107,7 +106,7 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card">
+              <div class="massage-card" id="massage1-card">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
@@ -155,8 +154,9 @@
                 <h2 aria-labelledby="massage2">
                   <button
                     class="massage__main-btn"
-                    aria-label="Open/Close the details of the massage"
+                    aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
+                    aria-haspopup="massage2-card"
                   >
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
@@ -168,7 +168,7 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card">
+              <div class="massage-card" id="massage2-card">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
@@ -216,8 +216,9 @@
                 <h2 aria-labelledby="massage3">
                   <button
                     class="massage__main-btn"
-                    aria-label="Open/Close the details of the massage"
+                    aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
+                    aria-haspopup="massage3-card"
                   >
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
@@ -229,7 +230,7 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card">
+              <div class="massage-card" id="massage3-card">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
