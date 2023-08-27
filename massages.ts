@@ -13,6 +13,9 @@ const buttonsContainer = document.getElementsByClassName(
 const closeButtons = document.getElementsByClassName(
   'massage__close-btn'
 ) as HTMLCollectionOf<HTMLSpanElement>
+const reservationButtons = document.getElementsByClassName(
+  'massage-card__btn'
+) as HTMLCollectionOf<HTMLAnchorElement>
 
 main()
 
@@ -24,55 +27,64 @@ function main() {
   }
 }
 
-function handleMassageBtnClick(index: number) {
-  const massageButton = massagesButton[index]
-  const massageDetails = massagesDetails[index]
-  const buttonText = buttonsText[index]
-  const buttonContainer = buttonsContainer[index]
-  const closeButton = closeButtons[index]
-
-  if (massageButton.ariaExpanded === 'false')
-    openMassageDetails(
-      massageButton,
-      massageDetails,
-      buttonContainer,
-      closeButton,
-      buttonText
-    )
-  else
-    closeMassageDetails(
-      massageButton,
-      massageDetails,
-      buttonContainer,
-      closeButton
-    )
+interface DynamicElements {
+  massageButton: HTMLButtonElement
+  massageDetails: HTMLDivElement
+  buttonText: HTMLSpanElement
+  buttonContainer: HTMLDivElement
+  closeButton: HTMLSpanElement
+  reservationButton: HTMLAnchorElement
 }
 
-function openMassageDetails(
-  button: HTMLButtonElement,
-  infos: HTMLDivElement,
-  btnContainer: HTMLDivElement,
-  closeBtn: HTMLSpanElement,
-  btnText: HTMLSpanElement
-) {
-  infos.style.height = '920px'
+function handleMassageBtnClick(index: number) {
+  const dynamicElements = {
+    massageButton: massagesButton[index],
+    massageDetails: massagesDetails[index],
+    buttonText: buttonsText[index],
+    buttonContainer: buttonsContainer[index],
+    closeButton: closeButtons[index],
+    reservationButton: reservationButtons[index],
+  }
 
-  button.ariaExpanded = 'true'
-  btnContainer.style.transform = `translateX(${
-    button.offsetWidth - btnText.offsetWidth
+  if (dynamicElements.massageButton.ariaExpanded === 'false')
+    openMassageDetails(dynamicElements)
+  else closeMassageDetails(dynamicElements)
+}
+
+function openMassageDetails(dynamicElements: DynamicElements) {
+  const {
+    massageDetails,
+    massageButton,
+    buttonContainer,
+    buttonText,
+    closeButton,
+    reservationButton,
+  } = dynamicElements
+  massageDetails.style.height = '920px'
+  massageDetails.ariaHidden = 'false'
+
+  massageButton.ariaExpanded = 'true'
+  buttonContainer.style.transform = `translateX(${
+    massageButton.offsetWidth - buttonText.offsetWidth
   }px)`
 
-  closeBtn.style.transform = `translateX(10%)`
+  closeButton.style.transform = `translateX(10%)`
+  reservationButton.tabIndex = 0
 }
 
-function closeMassageDetails(
-  button: HTMLButtonElement,
-  infos: HTMLDivElement,
-  btnContainer: HTMLDivElement,
-  closeBtn: HTMLSpanElement
-) {
-  infos.style.height = '0'
-  button.ariaExpanded = 'false'
-  btnContainer.style.transform = `translateX(0)`
-  closeBtn.style.transform = `translateX(-150%)`
+function closeMassageDetails(dynamicElements: DynamicElements) {
+  const {
+    massageDetails,
+    massageButton,
+    buttonContainer,
+    closeButton,
+    reservationButton,
+  } = dynamicElements
+  massageDetails.style.height = '0'
+  massageDetails.ariaHidden = 'true'
+
+  massageButton.ariaExpanded = 'false'
+  buttonContainer.style.transform = `translateX(0)`
+  closeButton.style.transform = `translateX(-150%)`
+  reservationButton.tabIndex = -1
 }
