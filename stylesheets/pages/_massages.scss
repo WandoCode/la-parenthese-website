@@ -21,8 +21,6 @@
 
     @include breakpoint('large') {
       width: auto;
-      overflow-y: auto;
-      max-height: 90dvh;
     }
   }
 }

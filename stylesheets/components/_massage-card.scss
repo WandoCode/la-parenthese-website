@@ -49,7 +49,9 @@
       justify-self: end;
 
       display: flex;
-      gap: in-rem(40);
+      column-gap: in-rem(40);
+      flex-wrap: wrap;
+      justify-content: end;
 
       margin-top: 0;
     }

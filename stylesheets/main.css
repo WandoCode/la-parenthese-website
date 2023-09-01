@@ -617,7 +617,7 @@ body {
   .main__body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4vw;
     width: min(100%, 1600px);
     margin-inline: auto;
     overflow: hidden;
@@ -645,14 +645,9 @@ body {
   width: 100%;
 }
 @media (min-width: 64rem) {
-  .main__illustration {
-    max-height: 100%;
-    margin-block: auto;
-  }
-}
-@media (min-width: 64rem) {
   .main__content {
     position: relative;
+    padding-bottom: 2rem;
   }
   .main__content:after {
     content: "";
@@ -876,7 +871,10 @@ body {
   .massage-card__datas {
     justify-self: end;
     display: flex;
-    gap: 2.5rem;
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: end;
     margin-top: 0;
   }
 }
@@ -1015,8 +1013,6 @@ body {
 @media (min-width: 64rem) {
   .massages__list {
     width: auto;
-    overflow-y: auto;
-    max-height: 90dvh;
   }
 }
 

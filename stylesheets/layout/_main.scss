@@ -29,7 +29,7 @@
     @include breakpoint('large') {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      gap: 4vw;
 
       width: $main-width;
 
@@ -63,16 +63,13 @@
 
   &__illustration {
     width: 100%;
-
-    @include breakpoint('large') {
-      max-height: 100%;
-      margin-block: auto;
-    }
   }
 
   &__content {
     @include breakpoint('large') {
       position: relative;
+
+      padding-bottom: 2rem;
 
       &:after {
         content: '';
