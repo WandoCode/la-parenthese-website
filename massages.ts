@@ -48,9 +48,20 @@ function handleMassageBtnClick(index: number) {
     reservationButton: reservationButtons[index],
   }
 
-  if (dynamicElements.massageButton.ariaExpanded === 'false')
-    openMassageDetails(dynamicElements)
-  else closeMassageDetails(dynamicElements)
+  for (let i = 0; i < massagesButton.length; i++) {
+    const dynamicElements = {
+      massageButton: massagesButton[i],
+      massageDetails: massagesDetails[i],
+      buttonText: buttonsText[i],
+      buttonContainer: buttonsContainer[i],
+      closeButton: closeButtons[i],
+      reservationButton: reservationButtons[i],
+    }
+
+    if (dynamicElements.massageButton.ariaExpanded === 'false' && index === i)
+      openMassageDetails(dynamicElements)
+    else closeMassageDetails(dynamicElements)
+  }
 }
 
 function openMassageDetails(dynamicElements: DynamicElements) {
@@ -90,6 +101,7 @@ function closeMassageDetails(dynamicElements: DynamicElements) {
     closeButton,
     reservationButton,
   } = dynamicElements
+
   massageDetails.style.height = '0'
   massageDetails.ariaHidden = 'true'
   massageDetails.ariaPressed = 'true'
