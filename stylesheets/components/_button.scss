@@ -73,6 +73,12 @@
 
   &--disabled {
     background: hsl(24, 37%, 48%);
+    cursor: not-allowed;
+
+    @include on-event {
+      outline: none;
+      background: hsl(24, 37%, 48%);
+    }
   }
 }
 
