@@ -384,9 +384,11 @@ body {
   letter-spacing: 0.1rem;
 }
 .massage-card__datas {
+  font-size: var(--fs-350);
   line-height: 128%;
 }
 .massage-card__features {
+  font-size: var(--fs-350);
   line-height: 171.5%;
   list-style: disc;
 }
@@ -596,8 +598,8 @@ body {
   padding-top: calc(5rem + 20vw + 2rem);
   padding-bottom: 8rem;
   background-image: url("../public/bubble-background.svg");
-  background-position: bottom right 0;
-  background-repeat: no-repeat space;
+  background-position: 100% 35rem;
+  background-repeat: no-repeat;
 }
 @media (min-width: 64rem) {
   .main {
@@ -615,7 +617,7 @@ body {
   .main__body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 5rem;
     width: min(100%, 1600px);
     margin-inline: auto;
     overflow: hidden;
@@ -626,6 +628,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: -1;
   height: 100px;
   width: 140px;
   background-image: url("../public/lotus-light.svg");
@@ -712,7 +715,7 @@ body {
   }
 }
 .btn--disabled {
-  opacity: 50%;
+  background: hsl(24, 37%, 48%);
 }
 
 .nav {
@@ -752,7 +755,7 @@ body {
      border-image: radial-gradient(circle, rgba(7, 75, 79, 0.25) 0%, rgba(7, 75, 79, 0) 100%) 1;
 }
 .massage header {
-  height: 80px;
+  height: 90px;
 }
 .massage h2 {
   height: 100%;
@@ -790,7 +793,7 @@ body {
   left: 100%;
   width: 10%;
   min-width: 30px;
-  height: 80px;
+  height: 90px;
   background-image: url("../public/lotus-item-sm.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -805,7 +808,7 @@ body {
   position: absolute;
   transform: translateX(-150%);
   width: 15px;
-  height: 80px;
+  height: 90px;
   background-image: url("../public/close.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -817,6 +820,7 @@ body {
 @media (min-width: 64rem) {
   .massage__close-btn {
     width: 20px;
+    height: 90px;
   }
 }
 .massage__text {
@@ -906,6 +910,11 @@ body {
 .massage-card__description {
   margin-top: 1.5rem;
 }
+@media (min-width: 64rem) {
+  .massage-card__description {
+    margin-top: 2.5rem;
+  }
+}
 .massage-card__description > p:not(:last-child) {
   margin-bottom: 0.5rem;
 }
@@ -913,7 +922,13 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
-  margin-top: 2.5rem;
+  margin-top: 3em;
+}
+@media (min-width: 64rem) {
+  .massage-card__cta-container {
+    margin-right: 2rem;
+    margin-block: 3em;
+  }
 }
 @media (min-width: 64rem) {
   .massage-card__infos {
@@ -995,7 +1010,7 @@ body {
 .massages__list {
   width: min(100% - 1rem - 6vw, 930px);
   margin-inline: auto;
-  min-height: 25rem;
+  background-image: linear-gradient(45deg, hsla(210, 27%, 96%, 0.6) 0%, hsla(210, 27%, 96%, 0.6) 100%);
 }
 @media (min-width: 64rem) {
   .massages__list {

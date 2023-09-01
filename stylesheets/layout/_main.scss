@@ -9,8 +9,8 @@
   padding-bottom: 8rem;
 
   background-image: url('../public/bubble-background.svg');
-  background-position: bottom right 0;
-  background-repeat: no-repeat space;
+  background-position: 100% 35rem;
+  background-repeat: no-repeat;
 
   @include breakpoint('large') {
     padding-top: in-rem(64);
@@ -29,7 +29,7 @@
     @include breakpoint('large') {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 5rem;
 
       width: $main-width;
 
@@ -44,6 +44,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
+
+    z-index: -1;
 
     height: 100px;
     width: 140px;
@@ -90,3 +92,5 @@
     }
   }
 }
+
+// TODO: pour les background 'bubble': faire une version qui est répété (image) et la mettre en arriere plan pour eviter que les buble ne bouge quand je change la hauteur du containeur (/massages) et qu'il y en ait partout

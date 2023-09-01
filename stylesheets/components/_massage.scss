@@ -1,6 +1,11 @@
 @use '../abstracts' as *;
 
 .massage {
+  $header-height: 80px;
+  @include breakpoint('large') {
+    $header-height: 90px;
+  }
+
   border-style: solid;
   border-width: 0 0 2px 0;
   border-image: radial-gradient(
@@ -10,11 +15,8 @@
     )
     1;
 
-  @include breakpoint('large') {
-  }
-
   & header {
-    height: 80px;
+    height: $header-height;
   }
 
   & h2 {
@@ -64,7 +66,7 @@
 
     width: 10%;
     min-width: 30px;
-    height: 80px;
+    height: $header-height;
 
     background-image: url('../public/lotus-item-sm.svg');
     background-repeat: no-repeat;
@@ -80,7 +82,7 @@
     position: absolute;
     transform: translateX(-150%);
     width: 15px;
-    height: 80px;
+    height: $header-height;
 
     background-image: url('../public/close.svg');
     background-repeat: no-repeat;
@@ -93,6 +95,7 @@
 
     @include breakpoint('large') {
       width: 20px;
+      height: $header-height;
     }
   }
 

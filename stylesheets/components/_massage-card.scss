@@ -89,6 +89,10 @@
   &__description {
     margin-top: 1.5rem;
 
+    @include breakpoint('large') {
+      margin-top: 2.5rem;
+    }
+
     & > p:not(:last-child) {
       margin-bottom: 0.5rem;
     }
@@ -97,7 +101,12 @@
   &__cta-container {
     width: fit-content;
     margin-inline: auto;
-    margin-top: 2.5rem;
+    margin-top: 3em;
+
+    @include breakpoint('large') {
+      margin-right: 2rem;
+      margin-block: 3em;
+    }
   }
 
   &__infos {
