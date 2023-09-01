@@ -711,6 +711,11 @@ body {
 }
 .btn--disabled {
   background: hsl(24, 37%, 48%);
+  cursor: not-allowed;
+}
+.btn--disabled:hover, .btn--disabled:active, .btn--disabled:focus, .btn--disabled:focus-within {
+  outline: none;
+  background: hsl(24, 37%, 48%);
 }
 
 .nav {
