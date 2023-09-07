@@ -39,8 +39,8 @@ function main() {
       event.preventDefault()
 
       const massageID = this.getAttribute('data-query')
-      var params = '?param1=valeur1&param2=valeur2' // Vos paramètres
-      var newUrl = this.href + `?massage=${massageID}` // L'URL de la page interne avec les paramètres
+
+      var newUrl = this.href + `?massage=${massageID}`
       window.location.href = newUrl
     })
   }
