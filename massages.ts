@@ -19,6 +19,10 @@ const reservationButtons = document.getElementsByClassName(
   'massage-card__btn'
 ) as HTMLCollectionOf<HTMLAnchorElement>
 
+const reservationsLinks = document.getElementsByClassName(
+  'massage-card__btn'
+) as HTMLCollectionOf<HTMLAnchorElement>
+
 main()
 
 function main() {
@@ -26,6 +30,19 @@ function main() {
     const massageButton = massagesButton[i]
 
     massageButton.addEventListener('click', () => handleMassageBtnClick(i))
+  }
+
+  for (let i = 0; i < reservationsLinks.length; i++) {
+    const link = reservationsLinks[i]
+
+    link.addEventListener('click', function (event) {
+      event.preventDefault()
+
+      const massageID = this.getAttribute('data-query')
+      var params = '?param1=valeur1&param2=valeur2' // Vos paramètres
+      var newUrl = this.href + `?massage=${massageID}` // L'URL de la page interne avec les paramètres
+      window.location.href = newUrl
+    })
   }
 }
 

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <script src="./app.ts" defer type="module"></script>
+    <script src="./reservation.ts" defer type="module"></script>
     <title>Réserver - La Parenthèse Enchantée</title>
   </head>
   <body>
@@ -15,7 +16,9 @@
           id="open-menu-btn"
           aria-label="Open navigation"
           aria-expanded="false"
-          aria-haspopup="menu"
+          aria-haspopup="true"
+          aria-pressed="false"
+          aria-controls="main-nav"
         >
           <span class="visually-hidden">Open navigation</span>
           <img
@@ -35,6 +38,7 @@
               alt="Logo de La parenthèse enchantée"
               class="logo__icon"
             />
+
             <picture>
               <source
                 media="(max-width: 64rem)"
@@ -49,7 +53,7 @@
           </a>
         </div>
       </div>
-      <nav class="header__nav nav" id="main-nav" aria-label="main menu">
+      <nav class="header__nav nav" id="main-nav" aria-description="main menu">
         <ul class="nav__list">
           <li>
             <a class="nav__link" href="/">Accueil</a>
@@ -69,16 +73,26 @@
         </ul>
       </nav>
     </header>
-    <main class="main">
-      <section class="main__body">
+    <main class="main main--background-v2 reservation">
+      <article class="main__body">
         <img
           class="show-desktop main__illustration"
           src="./public/bottle-salt-lg.png"
           alt="Small bottle of essential oil on blue cristals with camomile and lavender"
         />
 
-        <div class="main__text home__text">Reserver</div>
-      </section>
+        <div class="main__content">
+          <h1 class="h1 h1--section">Réserver</h1>
+          <img
+            class="hide-desktop home__illustration main__illustration"
+            src="./public/bottle-salt-sm.png"
+            alt="Small bottle of essential oil on blue cristals with camomile and lavender"
+          />
+          <div class="reservation__body">
+            <!-- Content here -->
+          </div>
+        </div>
+      </article>
     </main>
     <footer class="footer">
       <div class="footer__container">

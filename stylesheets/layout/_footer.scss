@@ -53,6 +53,8 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
+
+      margin-inline: 2rem;
     }
   }
 
@@ -78,7 +80,6 @@
     margin-bottom: $footer-flow;
 
     @include breakpoint('large') {
-      justify-items: end;
       gap: $footer-gap-desktop;
     }
   }
@@ -100,7 +101,6 @@
     gap: $footer-flow-sm;
 
     @include breakpoint('large') {
-      justify-items: end;
       gap: $footer-gap-desktop;
     }
   }

@@ -436,6 +436,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin-inline: 2rem;
   }
 }
 .footer__nav > ul {
@@ -458,7 +459,6 @@ body {
 }
 @media (min-width: 64rem) {
   .footer__legal ul {
-    justify-items: end;
     gap: 1rem;
   }
 }
@@ -479,7 +479,6 @@ body {
 }
 @media (min-width: 64rem) {
   .footer__copyright {
-    justify-items: end;
     gap: 1rem;
   }
 }
