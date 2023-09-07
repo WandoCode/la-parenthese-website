@@ -89,7 +89,126 @@
             alt="Small bottle of essential oil on blue cristals with camomile and lavender"
           />
           <div class="reservation__body">
-            <!-- Content here -->
+            <!-- Start content here -->
+            <section class="massage-choice">
+              <h2 class="h2 h2--section">Choix du massage</h2>
+              <form class="massage-choice__form">
+                <div>
+                  <label for="date">
+                    Date
+                    <input type="date" name="date" id="date" />
+                    <!-- TODO: find a date picker -->
+                  </label>
+                  <label for="heure">
+                    Heure
+                    <input type="time" name="heure" id="heure" />
+                    <!-- TODO: find a time picker -->
+                  </label>
+                  <label for="heure">
+                    Massage
+                    <select name="massage" id="massage">
+                      <option selected disabled>Choisir</option>
+                      <option value="massage1">Cinq continents</option>
+                      <option value="massage2">Power legs</option>
+                      <option value="massage3">Power legs + booty</option>
+                    </select>
+                    <!-- TODO: find a select: https://github.com/select2/select2 ou https://github.com/Choices-js/Choices -->
+                  </label>
+                </div>
+                <div>
+                  <ul>
+                    <li>Massage <span>Choissiez un massage</span></li>
+                    <li>Durée <span></span></li>
+                    <li>Prix (TVAC) <span></span></li>
+                  </ul>
+                  <label for="cadeau">
+                    <input type="checkbox" name="cadeau" id="cadeau" />
+                    Offrir ce massage
+                  </label>
+                </div>
+                <button class="btn btn--secondary btn--sm">Continuer</button>
+              </form>
+            </section>
+            <section class="client-infos">
+              <h2 class="h2 h2--section">Coordonées</h2>
+              <form class="client-infos__form">
+                <div>
+                  <label for="nom">
+                    Nom
+                    <input type="text" name="nom" id="nom" />
+                  </label>
+                  <label for="prenom">
+                    Prenom
+                    <input type="text" name="prenom" id="prenom" />
+                  </label>
+                  <label for="email">
+                    Email
+                    <input type="email" name="email" id="email" />
+                  </label>
+                  <label for="tel">
+                    Tel.
+                    <input type="phone" name="tel" id="tel" />
+                  </label>
+                  <label for="localite">
+                    Localite*
+                    <input type="text" name="localite" id="localite" />
+                    <!-- TODO: utiliser le tag <datalist> (NON: on ne peut pas le styler normalement, trouver un module qui le remplace): https://www.npmjs.com/package/autocompleter ou https://github.com/Choices-js/Choices-->
+                  </label>
+                </div>
+                <div>
+                  <label for="confidentialite">
+                    <input
+                      type="checkbox"
+                      name="confidentialite"
+                      id="confidentialite"
+                    />
+                    En soumettant ce formulaire, j’accepte que les informations
+                    saisies soient utilisées dans le cadre de cette réservation
+                    et de la prestation de service qui y est liée. Pour plus
+                    d’informations, voir : Politique de confidentialité
+                  </label>
+
+                  <label for="conditions_ventes">
+                    <input
+                      type="checkbox"
+                      name="conditions_ventes"
+                      id="conditions_ventes"
+                    />
+                    En soumettant ce formulaire, j’accepte les conditions
+                    d’utilisations.
+                  </label>
+                </div>
+                <div>
+                  <p>
+                    En cliquant sur “Réserver”, votre demande sera soumise à la
+                    masseuse.
+                  </p>
+                  <p>
+                    Elle vous contactera personnellement prochainement afin de
+                    confirmer le rendez-vous.
+                  </p>
+                </div>
+                <button class="btn btn--primary btn--sm">Réserver</button>
+              </form>
+            </section>
+            <section class="confirmation">
+              <h2 class="h2 h2--section">Confirmation</h2>
+              <div>
+                <p>Votre demande a bien été transmise.</p>
+                <p>
+                  La masseuse vous contactera personnellement prochainement afin
+                  de finaliser le rendez-vous.
+                </p>
+              </div>
+              <a
+                href="./index.html"
+                class="btn btn--secondary btn--sm"
+                data-query="massage1"
+              >
+                Retour à la page principale
+              </a>
+            </section>
+            <!-- Stop content here -->
           </div>
         </div>
       </article>
