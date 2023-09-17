@@ -176,6 +176,91 @@
 
             <section class="massage">
               <header>
+                <h2 aria-labelledby="massage2">
+                  <button
+                    class="massage__main-btn"
+                    aria-label="Show/hide the details of the massage"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    aria-pressed="false"
+                    aria-controls="massage-card2"
+                  >
+                    <span class="massage__close-btn"></span>
+                    <span class="massage__container">
+                      <span class="massage__text" id="massage2">
+                        Power legs
+                      </span>
+                      <span class="massage__logo"></span>
+                    </span>
+                  </button>
+                </h2>
+              </header>
+              <div class="massage-card" aria-hidden="true" id="massage-card2">
+                <div class="massage-card__infos">
+                  <img
+                    class="massage-card__img"
+                    src="./public/wellness.png"
+                    alt="Woman being massaged"
+                  />
+
+                  <div class="massage-card__container">
+                    <h3 class="visually-hidden">
+                      Principales caractéristiques du massage
+                    </h3>
+                    <div class="massage-card__datas">
+                      <div class="massage-card__time">
+                        <span class="visually-hidden">Durée:</span>1h
+                      </div>
+                      <div class="massage-card__price">
+                        <span class="visually-hidden">Prix:</span>65€
+                      </div>
+                    </div>
+
+                    <ul
+                      class="massage-card__features"
+                      aria-label="Massage main features"
+                    >
+                      <li class="massage-card__feature">Relaxant</li>
+                      <li class="massage-card__feature">
+                        Dos, tête et épaules
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="massage-card__description">
+                  <h3 class="visually-hidden">Description du massage</h3>
+                  <p>
+                    Optez pour ce massage spécialement conçu pour soulager les
+                    problèmes liés aux jambes tels que la sensation de lourdeur,
+                    le gonflement, la cellulite, les problèmes de circulation
+                    sanguine et la rétention d'eau.
+                  </p>
+
+                  <p>
+                    Les effets bénéfiques de ce massage se traduisent par des
+                    muscles détendus, des tissus plus fermes, une amélioration
+                    de la texture de la peau et une réduction de la cellulite.
+                  </p>
+                  <p>
+                    Vous retrouverez une sensation de légèreté et une confiance
+                    en vous renouvelée grâce à cette technique ciblée.
+                  </p>
+                  <p>Massage contre-indiqué en cas de flébite.</p>
+                </div>
+                <div class="massage-card__cta-container">
+                  <a
+                    tabindex="-1"
+                    href="./reservation.html"
+                    class="massage-card__btn btn btn--primary btn--sm"
+                    data-query="massage2"
+                  >
+                    Réserver
+                  </a>
+                </div>
+              </div>
+            </section>
+            <section class="massage">
+              <header>
                 <h2 aria-labelledby="massage3">
                   <button
                     class="massage__main-btn"
@@ -188,7 +273,7 @@
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
                       <span class="massage__text" id="massage3">
-                        Power legs <span>(+booty)</span>
+                        Power legs + booty
                       </span>
                       <span class="massage__logo"></span>
                     </span>
@@ -209,13 +294,12 @@
                     </h3>
                     <div class="massage-card__datas">
                       <div class="massage-card__time">
-                        <span class="visually-hidden">Durée:</span>1h (+20min)
+                        <span class="visually-hidden">Durée:</span>1h20
                       </div>
                       <div class="massage-card__price">
-                        <span class="visually-hidden">Prix:</span>65€ (+20€)
+                        <span class="visually-hidden">Prix:</span>85€
                       </div>
                     </div>
-
                     <ul
                       class="massage-card__features"
                       aria-label="Massage main features"
@@ -261,18 +345,18 @@
             </section>
             <section class="massage">
               <header>
-                <h2 aria-labelledby="massage2">
+                <h2 aria-labelledby="massage4">
                   <button
                     class="massage__main-btn"
                     aria-label="Show/hide the details of the massage"
                     aria-expanded="false"
                     aria-haspopup="true"
                     aria-pressed="false"
-                    aria-controls="massage-card2"
+                    aria-controls="massage-card4"
                   >
                     <span class="massage__close-btn"></span>
                     <span class="massage__container">
-                      <span class="massage__text" id="massage2">
+                      <span class="massage__text" id="massage4">
                         Massage harmonisant
                       </span>
                       <span class="massage__logo"></span>
@@ -280,7 +364,7 @@
                   </button>
                 </h2>
               </header>
-              <div class="massage-card" aria-hidden="true" id="massage-card2">
+              <div class="massage-card" aria-hidden="true" id="massage-card4">
                 <div class="massage-card__infos">
                   <img
                     class="massage-card__img"
@@ -330,7 +414,7 @@
                     href="./reservation.html"
                     class="massage-card__btn btn btn--primary btn--sm btn--disabled"
                     aria-disabled="true"
-                    data-query="massage2"
+                    data-query="massage4"
                   >
                     A venir
                   </a>
@@ -374,9 +458,9 @@
             </ul>
           </nav>
           <div class="footer__buisness-infos">
-            <a class="footer__cta btn btn--primary btn--sm" href="/reservation"
-              >Réserver</a
-            >
+            <a class="footer__cta btn btn--primary btn--sm" href="/reservation">
+              Réserver
+            </a>
             <p>TVA BE0123456789</p>
             <p>exemple@gmail.com</p>
           </div>

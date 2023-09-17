@@ -3,13 +3,16 @@ import localeFr from 'air-datepicker/locale/fr'
 import 'air-datepicker/air-datepicker.css'
 import { reservationOptions as opts } from './options'
 
+import Choices from 'choices.js'
+import 'choices.js/public/assets/styles/choices.css'
+
 const massageChoiceForm = document.getElementById(
   'massage-choice-form'
 ) as HTMLFormElement
 
 function main() {
-  fillMassageInputFromURLParams()
   initDateTimePickers()
+  initSelectField()
 }
 
 function initDateTimePickers() {
@@ -56,20 +59,27 @@ function isDateFlaggedAsDisabled(date: Date) {
   )
 }
 
-function fillMassageInputFromURLParams() {
-  const massageChoice = getMassageFromURLParams()
-
-  if (massageChoice) {
-    massageChoiceForm.elements['massage'].value = massageChoice
-  }
-}
-
 function getMassageFromURLParams() {
   const url = new URL(window.location.href)
   const params = url.searchParams
   const massage = params.get('massage')
 
   return massage
+}
+
+function initSelectField() {
+  const selectEl = massageChoiceForm.elements['massage']
+
+  const choices = new Choices(selectEl, {
+    choices: opts.massages,
+    allowHTML: false,
+    searchEnabled: false,
+    itemSelectText: '',
+  })
+
+  const massageChoice = getMassageFromURLParams()
+
+  if (massageChoice) choices.setChoiceByValue(massageChoice)
 }
 
 main()
