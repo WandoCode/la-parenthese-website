@@ -10,5 +10,8 @@
     "@parcel/optimizer-data-url": "^2.9.3",
     "@parcel/transformer-inline-string": "^2.9.3",
     "parcel": "latest"
+  },
+  "dependencies": {
+    "air-datepicker": "^3.4.0"
   }
 }
