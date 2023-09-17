@@ -10,9 +10,24 @@ const massageChoiceForm = document.getElementById(
   'massage-choice-form'
 ) as HTMLFormElement
 
+const customerDetailsForm = document.getElementById(
+  'client-infos-form'
+) as HTMLFormElement
+
 function main() {
   initDateTimePickers()
-  initSelectField()
+  initSelectMassageField()
+  initSelectLocalityField()
+}
+
+function initSelectLocalityField() {
+  const localiteEl = customerDetailsForm.elements['localite']
+
+  const choices = new Choices(localiteEl, {
+    choices: opts.localites,
+    allowHTML: false,
+    itemSelectText: '',
+  })
 }
 
 function initDateTimePickers() {
@@ -67,7 +82,7 @@ function getMassageFromURLParams() {
   return massage
 }
 
-function initSelectField() {
+function initSelectMassageField() {
   const selectEl = massageChoiceForm.elements['massage']
 
   const choices = new Choices(selectEl, {

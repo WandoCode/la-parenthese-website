@@ -1,4 +1,4 @@
-import { Choice } from 'choices.js'
+import { Choice, Item } from 'choices.js'
 
 interface ReservationOptions {
   startHour: number
@@ -8,6 +8,7 @@ interface ReservationOptions {
   defaultHour: number
   defaultMin: number
   massages: Choice[]
+  localites: Item[]
 }
 
 const reservationOptions: ReservationOptions = {
@@ -23,8 +24,46 @@ const reservationOptions: ReservationOptions = {
     { label: 'Power legs', value: 'massage2' },
     { label: 'Power legs + booty', value: 'massage3' },
   ],
+  localites: [
+    {
+      label: 'Belgique',
+      value: '',
+      choices: [
+        { label: 'Tournai', value: 'tournai' },
+        { label: 'Antoing', value: 'antoing' },
+        { label: 'Brunehaut', value: 'brunehaut' },
+        { label: 'Rumes', value: 'rumes' },
+        { label: 'Estaimpuis', value: 'estaimpuis' },
+        { label: 'Pecq', value: 'pecq' },
+        { label: 'Celles', value: 'celles' },
+      ],
+    },
+    {
+      label: 'France',
+      value: '',
+      choices: [
+        { label: 'Aix-en-Pévèle', value: 'aix-en-pevele' },
+        { label: 'Orchies', value: 'orchies' },
+        { label: 'Nomain', value: 'nomain' },
+        { label: 'Auchy-lez-Orchies', value: 'auchy-lez-orchies' },
+        { label: 'Mouchin', value: 'mouchin' },
+        { label: 'Bachy', value: 'bachy' },
+        { label: 'Wannehain', value: 'wannehain' },
+        { label: 'Corbieux', value: 'corbieux' },
+        { label: 'Genech', value: 'genech' },
+        { label: 'Camphin-en-Pévèle', value: 'camphin-en-pevele' },
+        { label: 'Bourghelles', value: 'bourghelles' },
+        { label: 'Cysoing', value: 'cysoing' },
+        { label: 'Bouvines', value: 'bouvines' },
+        { label: 'Baisieux', value: 'baisieux' },
+        { label: 'Willems', value: 'willems' },
+        { label: 'Chéreng', value: 'chereng' },
+      ],
+    },
+  ],
 }
 
 export { reservationOptions }
 // TODO: voir avec Charlotte les dates à rendre indisponibles
 // TODO: Voir avec Charlotte les heures à activer
+// TODO: Voir avec Charlotte pour qu'elle recherche les code postaux. Les mettre en 'value' pour qu'ils soient pris en compte lors de la recherche si l'utilisateur tape le CP au lieux de la commune

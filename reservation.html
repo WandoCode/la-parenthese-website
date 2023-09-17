@@ -105,7 +105,6 @@
                   <label for="massage">
                     Massage
                     <select name="massage" id="massage"></select>
-                    <!-- TODO: find a select: https://github.com/select2/select2 ou https://github.com/Choices-js/Choices -->
                   </label>
                 </div>
                 <div>
@@ -124,7 +123,7 @@
             </section>
             <section class="client-infos">
               <h2 class="h2 h2--section">Coordonées</h2>
-              <form class="client-infos__form">
+              <form class="client-infos__form" id="client-infos-form">
                 <div>
                   <label for="nom">
                     Nom
@@ -144,8 +143,7 @@
                   </label>
                   <label for="localite">
                     Localite*
-                    <input type="text" name="localite" id="localite" />
-                    <!-- TODO: utiliser le tag <datalist> (NON: on ne peut pas le styler normalement, trouver un module qui le remplace): https://www.npmjs.com/package/autocompleter ou https://github.com/Choices-js/Choices-->
+                    <select name="localite" id="localite" />
                   </label>
                 </div>
                 <div>
