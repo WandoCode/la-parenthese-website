@@ -1020,6 +1020,13 @@ body {
   }
 }
 
+.reservation__step-two {
+  display: none;
+}
+.reservation__step-three {
+  display: none;
+}
+
 /**
  * Main content containers
  * 1. Make the container full-width with a maximum width
