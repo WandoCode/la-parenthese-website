@@ -1,5 +1,5 @@
-import burgerImg from './public/burger_menu.svg'
-import closeImg from './public/close-primary.svg'
+import burgerImg from '../public/burger_menu.svg'
+import closeImg from '../public/close-primary.svg'
 import { screenSizeIsMobile } from './helpers'
 
 const menuButton = document.getElementById('open-menu-btn') as HTMLButtonElement
