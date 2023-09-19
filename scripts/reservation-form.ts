@@ -36,17 +36,28 @@ const stepThreeSection = document.getElementsByClassName(
   'reservation__step-three'
 )[0] as HTMLElement
 
-const formInfos = {}
-
 stepOneForm.onsubmit = (e) => {
   e.preventDefault()
   const formData = new FormData(stepOneForm)
-  const formObject = {} as FormObject
-  formData.forEach((val, key) => (formObject[key] = val))
-  formObject.date = castDateFromString(formObject.date) || ''
+  const formObject = formDataToFormatedObject(formData)
 
   const errors = validateStepOne(formObject)
-  console.log(errors?.value)
+
+  if (errors === null) return
+  if (errors) {
+    for (const fieldName of formData.keys()) {
+      const fieldElement = document.getElementsByName(fieldName)[0]
+      if (Object.keys(errors).includes(fieldName)) {
+        const errorMessage = errors[fieldName]
+        fieldElement.classList.add('invalid')
+        fieldElement.setAttribute('data-error', errorMessage)
+      } else {
+        fieldElement.classList.remove('invalid')
+        fieldElement.removeAttribute('data-error')
+      }
+    }
+    return
+  }
   displayNextStepForm(stepOneSection, stepTwoSection)
 }
 
@@ -57,6 +68,14 @@ stepTwoForm.onsubmit = (e) => {
   const errors = validateStepTwo(form)
 
   displayNextStepForm(stepTwoSection, stepThreeSection)
+}
+
+function formDataToFormatedObject(formData: FormData) {
+  const formObject = {} as FormObject
+  formData.forEach((val, key) => (formObject[key] = val))
+  formObject.date = castDateFromString(formObject.date) || ''
+
+  return formObject
 }
 
 function displayNextStepForm(
@@ -70,8 +89,10 @@ function displayNextStepForm(
 function validateStepOne(form: {}) {
   try {
     formOneSchema.validateSync(form, { abortEarly: false })
+    return null
   } catch (error) {
-    if (error instanceof ValidationError) return error
+    if (error instanceof ValidationError)
+      return formatErrorsFromValidationError(error)
     else throw error
   }
 }
@@ -85,6 +106,19 @@ function castDateFromString(date: string | Date) {
     parseInt(date.split('/')[1]),
     parseInt(date.split('/')[0])
   )
+}
+/* 
+  Transform the ValidationError object into 
+  {
+    fieldName: 'error massage', ...
+  } 
+*/
+function formatErrorsFromValidationError(errors: ValidationError) {
+  const formatedErrors = {}
+  errors.inner.forEach((err) => {
+    if (err.path) formatedErrors[err.path] = err.message
+  })
+  return formatedErrors
 }
 
 const formOneSchema = object({
@@ -106,5 +140,5 @@ const formOneSchema = object({
       }
     ),
   massage: string().required(),
-  gift: boolean().required(),
+  cadeau: boolean().required(),
 })
