@@ -41,8 +41,6 @@ stepOneForm.onsubmit = (e) => {
   formObject.date = castDateFromString(formObject.date) || ''
 
   const errors = validateStepOne(formObject)
-
-  if (errors === null) return
   if (errors) return showErrorsOnForm(errors, formData)
 
   // No error
@@ -54,10 +52,12 @@ stepTwoForm.onsubmit = (e) => {
 
   const formData = new FormData(stepTwoForm)
   if (!formData.get('confidentialite')) formData.set('confidentialite', 'false')
-  const formObject = formDataToFormatedObject(formData)
-  const errors = validateStepTwo(formObject)
+  if (!formData.get('conditions_ventes'))
+    formData.set('conditions_ventes', 'false')
 
-  if (errors === null) return
+  const formObject = formDataToFormatedObject(formData)
+
+  const errors = validateStepTwo(formObject)
   if (errors) return showErrorsOnForm(errors, formData)
 
   displayNextStepForm(stepTwoSection, stepThreeSection)
@@ -96,7 +96,6 @@ function displayNextStepForm(
 function validateStepOne(form: Record<string, string>) {
   try {
     formOneSchema.validateSync(form, { abortEarly: false })
-    return null
   } catch (error) {
     if (error instanceof ValidationError)
       return formatErrorsFromValidationError(error)
@@ -107,7 +106,6 @@ function validateStepOne(form: Record<string, string>) {
 function validateStepTwo(formObject: Record<string, string>) {
   try {
     formTwoSchema.validateSync(formObject, { abortEarly: false })
-    return null
   } catch (error) {
     if (error instanceof ValidationError)
       return formatErrorsFromValidationError(error)
@@ -170,6 +168,13 @@ const formTwoSchema = object({
     .test(
       'is-confidentailite',
       'User have to accept confidantiality contract',
+      (val) => val === 'true'
+    ),
+  conditions_ventes: string()
+    .required()
+    .test(
+      'is-conditions_ventes',
+      'User have to accept service contract',
       (val) => val === 'true'
     ),
 })

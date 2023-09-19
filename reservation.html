@@ -93,19 +93,37 @@
             <!-- Start content here -->
             <section class="massage-choice reservation__step-one">
               <h2 class="h2 h2--section">Choix du massage</h2>
-              <form class="massage-choice__form" id="massage-choice-form">
+              <form
+                class="massage-choice__form"
+                id="massage-choice-form"
+                novalidate
+              >
                 <div>
                   <label for="date">
                     Date
-                    <input type="text" name="date" id="date" />
+                    <input
+                      type="text"
+                      name="date"
+                      id="date"
+                      maxlength="10"
+                      pattern="\d\d/\d\d/\d\d\d\d"
+                      required
+                    />
                   </label>
                   <label for="heure">
                     Heure
-                    <input type="text" name="heure" id="heure" />
+                    <input
+                      type="text"
+                      name="heure"
+                      id="heure"
+                      required
+                      maxlength="5"
+                      pattern="\d\d:\d\d"
+                    />
                   </label>
                   <label for="massage">
                     Massage
-                    <select name="massage" id="massage"></select>
+                    <select name="massage" id="massage" required></select>
                   </label>
                 </div>
                 <div>
@@ -129,27 +147,55 @@
             </section>
             <section class="client-infos reservation__step-two">
               <h2 class="h2 h2--section">Coordonées</h2>
-              <form class="client-infos__form" id="client-infos-form">
+              <form
+                class="client-infos__form"
+                id="client-infos-form"
+                novalidate
+              >
                 <div>
                   <label for="nom">
                     Nom
-                    <input type="text" name="nom" id="nom" />
+                    <input
+                      type="text"
+                      name="nom"
+                      id="nom"
+                      maxlength="30"
+                      required
+                    />
                   </label>
                   <label for="prenom">
                     Prénom
-                    <input type="text" name="prenom" id="prenom" />
+                    <input
+                      type="text"
+                      name="prenom"
+                      id="prenom"
+                      maxlength="30"
+                      required
+                    />
                   </label>
                   <label for="email">
                     Email
-                    <input type="email" name="email" id="email" />
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      maxlength="30"
+                      required
+                    />
                   </label>
                   <label for="tel">
                     Tel.
-                    <input type="phone" name="tel" id="tel" />
+                    <input
+                      type="phone"
+                      name="tel"
+                      id="tel"
+                      maxlength="15"
+                      required
+                    />
                   </label>
                   <label for="localite">
                     Localite*
-                    <select name="localite" id="localite" />
+                    <select name="localite" id="localite" required />
                   </label>
                 </div>
                 <div>
@@ -159,6 +205,7 @@
                       name="confidentialite"
                       id="confidentialite"
                       value="true"
+                      required
                     />
                     En soumettant ce formulaire, j’accepte que les informations
                     saisies soient utilisées dans le cadre de cette réservation
@@ -171,6 +218,8 @@
                       type="checkbox"
                       name="conditions_ventes"
                       id="conditions_ventes"
+                      value="true"
+                      required
                     />
                     En soumettant ce formulaire, j’accepte les conditions
                     d’utilisations.

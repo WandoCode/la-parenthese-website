@@ -98,8 +98,8 @@ function initSelectMassageField() {
     itemSelectText: '',
   })
 
-  const massageChoiceValue = getMassageFromURLParams()
-  const massage = getMassageFromMassageValue(massageChoiceValue)
+  const massageValue = getMassageFromURLParams()
+  const massage = getMassageFromMassageValue(massageValue)
 
   if (massage) {
     choices.setChoiceByValue(massage.value)
@@ -112,6 +112,7 @@ function handleSelectMassageChange(e: Event) {
 
   const massageChoiceValue = target.value
   const massage = getMassageFromMassageValue(massageChoiceValue)
+
   if (massage) showMassageShort(massage)
 }
 
@@ -124,4 +125,5 @@ function showMassageShort(massage: (typeof opts.massages)[0]) {
   reservationCheckoutList[1].innerText = massage.customProperties?.duration
   reservationCheckoutList[2].innerText = massage.customProperties?.price
 }
+
 main()
