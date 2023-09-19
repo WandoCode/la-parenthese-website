@@ -14,6 +14,10 @@ const customerDetailsForm = document.getElementById(
   'client-infos-form'
 ) as HTMLFormElement
 
+const reservationCheckoutList = document
+  .getElementById('reservation-checkout')
+  ?.getElementsByTagName('span') as HTMLCollectionOf<HTMLSpanElement>
+
 function main() {
   initDateTimePickers()
   initSelectMassageField()
@@ -83,7 +87,9 @@ function getMassageFromURLParams() {
 }
 
 function initSelectMassageField() {
-  const selectEl = massageChoiceForm.elements['massage']
+  const selectEl = massageChoiceForm.elements['massage'] as HTMLSelectElement
+
+  selectEl.addEventListener('change', handleSelectMassageChange)
 
   const choices = new Choices(selectEl, {
     choices: opts.massages,
@@ -92,9 +98,30 @@ function initSelectMassageField() {
     itemSelectText: '',
   })
 
-  const massageChoice = getMassageFromURLParams()
+  const massageChoiceValue = getMassageFromURLParams()
+  const massage = getMassageFromMassageValue(massageChoiceValue)
 
-  if (massageChoice) choices.setChoiceByValue(massageChoice)
+  if (massage) {
+    choices.setChoiceByValue(massage.value)
+    showMassageShort(massage)
+  }
 }
 
+function handleSelectMassageChange(e: Event) {
+  const target = e.target as HTMLSelectElement
+
+  const massageChoiceValue = target.value
+  const massage = getMassageFromMassageValue(massageChoiceValue)
+  if (massage) showMassageShort(massage)
+}
+
+function getMassageFromMassageValue(massageValue: string | null) {
+  return opts.massages.find((massage) => massage.value === massageValue)
+}
+
+function showMassageShort(massage: (typeof opts.massages)[0]) {
+  reservationCheckoutList[0].innerText = massage.label
+  reservationCheckoutList[1].innerText = massage.customProperties?.duration
+  reservationCheckoutList[2].innerText = massage.customProperties?.price
+}
 main()

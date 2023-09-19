@@ -19,10 +19,27 @@ const reservationOptions: ReservationOptions = {
   defaultHour: 17,
   defaultMin: 30,
   massages: [
-    { label: 'Choisir', value: '', selected: true, disabled: true },
-    { label: 'Cinq continents', value: 'massage1' },
-    { label: 'Power legs', value: 'massage2' },
-    { label: 'Power legs + booty', value: 'massage3' },
+    {
+      label: 'Choisir',
+      value: '',
+      selected: true,
+      disabled: true,
+    },
+    {
+      label: 'Cinq continents',
+      value: 'massage1',
+      customProperties: { duration: '1h30', price: 90 },
+    },
+    {
+      label: 'Power legs',
+      value: 'massage2',
+      customProperties: { duration: '1h', price: 65 },
+    },
+    {
+      label: 'Power legs + booty',
+      value: 'massage3',
+      customProperties: { duration: '1h20', price: 85 },
+    },
   ],
   localites: [
     {
