@@ -9,11 +9,8 @@ import {
 } from 'yup'
 import { reservationOptions as opts } from './options'
 
-interface FormObject {
-  date: string | Date
-  heure: string
-  massage: string
-  gift: boolean
+interface FormatedErrors {
+  [key: string]: string
 }
 
 const stepOneSection = document.getElementsByClassName(
@@ -39,41 +36,51 @@ const stepThreeSection = document.getElementsByClassName(
 stepOneForm.onsubmit = (e) => {
   e.preventDefault()
   const formData = new FormData(stepOneForm)
+  if (!formData.get('cadeau')) formData.set('cadeau', 'false')
   const formObject = formDataToFormatedObject(formData)
+  formObject.date = castDateFromString(formObject.date) || ''
 
   const errors = validateStepOne(formObject)
 
   if (errors === null) return
-  if (errors) {
-    for (const fieldName of formData.keys()) {
-      const fieldElement = document.getElementsByName(fieldName)[0]
-      if (Object.keys(errors).includes(fieldName)) {
-        const errorMessage = errors[fieldName]
-        fieldElement.classList.add('invalid')
-        fieldElement.setAttribute('data-error', errorMessage)
-      } else {
-        fieldElement.classList.remove('invalid')
-        fieldElement.removeAttribute('data-error')
-      }
-    }
-    return
-  }
+  if (errors) return showErrorsOnForm(errors, formData)
+
+  // No error
   displayNextStepForm(stepOneSection, stepTwoSection)
 }
 
 stepTwoForm.onsubmit = (e) => {
   e.preventDefault()
 
-  const form = new FormData(stepTwoForm)
-  const errors = validateStepTwo(form)
+  const formData = new FormData(stepTwoForm)
+  if (!formData.get('confidentialite')) formData.set('confidentialite', 'false')
+  const formObject = formDataToFormatedObject(formData)
+  const errors = validateStepTwo(formObject)
+
+  if (errors === null) return
+  if (errors) return showErrorsOnForm(errors, formData)
 
   displayNextStepForm(stepTwoSection, stepThreeSection)
 }
 
+function showErrorsOnForm(errors: FormatedErrors, formData: FormData) {
+  for (const fieldName of formData.keys()) {
+    const fieldElement = document.getElementsByName(fieldName)[0]
+    if (Object.keys(errors).includes(fieldName)) {
+      const errorMessage = errors[fieldName]
+
+      fieldElement.classList.add('invalid')
+      fieldElement.setAttribute('data-error', errorMessage)
+    } else {
+      fieldElement.classList.remove('invalid')
+      fieldElement.removeAttribute('data-error')
+    }
+  }
+}
+
 function formDataToFormatedObject(formData: FormData) {
-  const formObject = {} as FormObject
+  const formObject: any = {}
   formData.forEach((val, key) => (formObject[key] = val))
-  formObject.date = castDateFromString(formObject.date) || ''
 
   return formObject
 }
@@ -86,7 +93,7 @@ function displayNextStepForm(
   nextStepElement.style.display = 'block'
 }
 
-function validateStepOne(form: {}) {
+function validateStepOne(form: Record<string, string>) {
   try {
     formOneSchema.validateSync(form, { abortEarly: false })
     return null
@@ -97,7 +104,16 @@ function validateStepOne(form: {}) {
   }
 }
 
-function validateStepTwo(form: FormData) {}
+function validateStepTwo(formObject: Record<string, string>) {
+  try {
+    formTwoSchema.validateSync(formObject, { abortEarly: false })
+    return null
+  } catch (error) {
+    if (error instanceof ValidationError)
+      return formatErrorsFromValidationError(error)
+    else throw error
+  }
+}
 
 function castDateFromString(date: string | Date) {
   if (typeof date !== 'string') return
@@ -114,7 +130,7 @@ function castDateFromString(date: string | Date) {
   } 
 */
 function formatErrorsFromValidationError(errors: ValidationError) {
-  const formatedErrors = {}
+  const formatedErrors: FormatedErrors = {}
   errors.inner.forEach((err) => {
     if (err.path) formatedErrors[err.path] = err.message
   })
@@ -140,5 +156,20 @@ const formOneSchema = object({
       }
     ),
   massage: string().required(),
-  cadeau: boolean().required(),
+  cadeau: string(),
+})
+
+const formTwoSchema = object({
+  nom: string().required().max(30),
+  prenom: string().required().max(30),
+  email: string().email().required().max(30),
+  tel: string().required().max(15).matches(/\d*/),
+  localite: string().required(),
+  confidentialite: string()
+    .required()
+    .test(
+      'is-confidentailite',
+      'User have to accept confidantiality contract',
+      (val) => val === 'true'
+    ),
 })
