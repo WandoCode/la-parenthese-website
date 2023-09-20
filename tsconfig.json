@@ -3,5 +3,6 @@
     "module": "CommonJS",
     "lib": ["es2019", "dom", "DOM.Iterable"],
     "target": "ES6"
-  }
+  },
+  "include": ["scripts/*/**.ts", "types.d.ts", "interfaces/*/**.ts"]
 }

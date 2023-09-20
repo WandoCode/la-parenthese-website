@@ -1,21 +1,6 @@
 import { ValidationError } from 'yup'
 import { formOneSchema, formTwoSchema } from './form-schemas'
-
-interface FormatedErrors {
-  [key: string]: string
-}
-
-interface FormObject {
-  date?: Date | ''
-  nom?: string
-  prenom?: string
-  heure?: string
-  massage?: string
-  localite?: string
-  confidentialite?: boolean
-  cadeau?: boolean
-  conditions_ventes?: boolean
-}
+import { FormObject, FormatedErrors } from '../interfaces/Forms'
 
 const stepOneSection = document.getElementsByClassName(
   'reservation__step-one'
@@ -55,7 +40,9 @@ function handleStepOneFormSubmit(e) {
   const formData = new FormData(stepOneForm)
   if (!formData.get('cadeau')) formData.set('cadeau', 'false')
   const formObject = formDataToFormatedObject(formData)
-  formObject.date = castDateFromString(formObject.date) || ''
+
+  if (formObject.date)
+    formObject.date = castDateFromString(formObject.date) || ''
 
   const errors = validateStepOne(formObject)
   if (errors) return showErrorsOnForm(errors, formData)
