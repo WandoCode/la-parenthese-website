@@ -33,6 +33,7 @@ const stepThreeSection = document.getElementsByClassName(
   'reservation__step-three'
 )[0] as HTMLElement
 
+let reservation = {}
 stepOneForm.onsubmit = (e) => {
   e.preventDefault()
   const formData = new FormData(stepOneForm)
@@ -44,6 +45,7 @@ stepOneForm.onsubmit = (e) => {
   if (errors) return showErrorsOnForm(errors, formData)
 
   // No error
+  reservation = { ...formObject }
   displayNextStepForm(stepOneSection, stepTwoSection)
 }
 
@@ -60,7 +62,9 @@ stepTwoForm.onsubmit = (e) => {
   const errors = validateStepTwo(formObject)
   if (errors) return showErrorsOnForm(errors, formData)
 
+  reservation = { ...reservation, ...formObject }
   displayNextStepForm(stepTwoSection, stepThreeSection)
+  sendReservation(reservation)
 }
 
 function showErrorsOnForm(errors: FormatedErrors, formData: FormData) {
@@ -135,6 +139,10 @@ function formatErrorsFromValidationError(errors: ValidationError) {
   return formatedErrors
 }
 
+function sendReservation(reservation) {
+  // TODO: envoyer le mail à Charlotte + confirmation au client
+}
+
 const formOneSchema = object({
   date: date().required(),
   heure: string()
@@ -178,3 +186,5 @@ const formTwoSchema = object({
       (val) => val === 'true'
     ),
 })
+
+// TODO: Ajouter un bouton "back" pour passer de l'étape 2 à la 1?
