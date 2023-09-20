@@ -1,16 +1,20 @@
-import {
-  object,
-  string,
-  number,
-  date,
-  InferType,
-  ValidationError,
-  boolean,
-} from 'yup'
-import { reservationOptions as opts } from './options'
+import { ValidationError } from 'yup'
+import { formOneSchema, formTwoSchema } from './form-schemas'
 
 interface FormatedErrors {
   [key: string]: string
+}
+
+interface FormObject {
+  date?: Date | ''
+  nom?: string
+  prenom?: string
+  heure?: string
+  massage?: string
+  localite?: string
+  confidentialite?: boolean
+  cadeau?: boolean
+  conditions_ventes?: boolean
 }
 
 const stepOneSection = document.getElementsByClassName(
@@ -29,12 +33,24 @@ const stepTwoForm = document.getElementById(
   'client-infos-form'
 ) as HTMLFormElement
 
+const stepTwoFormBackBtn = document.getElementById(
+  'client-infos-form__back'
+) as HTMLButtonElement
+
 const stepThreeSection = document.getElementsByClassName(
   'reservation__step-three'
 )[0] as HTMLElement
 
-let reservation = {}
-stepOneForm.onsubmit = (e) => {
+let reservation: FormObject = {}
+stepOneForm.onsubmit = handleStepOneFormSubmit
+stepTwoForm.onsubmit = handleStepTwoFormSubmit
+
+stepTwoFormBackBtn.onclick = (e) => {
+  e.preventDefault()
+  displayNextStepForm(stepTwoSection, stepOneSection)
+}
+
+function handleStepOneFormSubmit(e) {
   e.preventDefault()
   const formData = new FormData(stepOneForm)
   if (!formData.get('cadeau')) formData.set('cadeau', 'false')
@@ -49,10 +65,12 @@ stepOneForm.onsubmit = (e) => {
   displayNextStepForm(stepOneSection, stepTwoSection)
 }
 
-stepTwoForm.onsubmit = (e) => {
+function handleStepTwoFormSubmit(e) {
   e.preventDefault()
 
   const formData = new FormData(stepTwoForm)
+
+  // Unchecked checkbox does not appear into the formData object...
   if (!formData.get('confidentialite')) formData.set('confidentialite', 'false')
   if (!formData.get('conditions_ventes'))
     formData.set('conditions_ventes', 'false')
@@ -65,6 +83,50 @@ stepTwoForm.onsubmit = (e) => {
   reservation = { ...reservation, ...formObject }
   displayNextStepForm(stepTwoSection, stepThreeSection)
   sendReservation(reservation)
+}
+
+function formDataToFormatedObject(formData: FormData) {
+  const formObject: FormObject = {}
+  formData.forEach((val, key) => (formObject[key] = val as string))
+
+  return formObject
+}
+
+function castDateFromString(date: string | Date) {
+  if (typeof date !== 'string') return
+  return new Date(
+    parseInt(date.split('/')[2]),
+    parseInt(date.split('/')[1]),
+    parseInt(date.split('/')[0])
+  )
+}
+
+function validateStepOne(form: FormObject) {
+  try {
+    formOneSchema.validateSync(form, { abortEarly: false })
+  } catch (error) {
+    if (error instanceof ValidationError)
+      return formatErrorsFromValidationError(error)
+    else throw error
+  }
+}
+
+function validateStepTwo(formObject: FormObject) {
+  try {
+    formTwoSchema.validateSync(formObject, { abortEarly: false })
+  } catch (error) {
+    if (error instanceof ValidationError)
+      return formatErrorsFromValidationError(error)
+    else throw error
+  }
+}
+
+function displayNextStepForm(
+  currentStepElement: HTMLElement,
+  nextStepElement: HTMLElement
+) {
+  currentStepElement.style.display = 'none'
+  nextStepElement.style.display = 'block'
 }
 
 function showErrorsOnForm(errors: FormatedErrors, formData: FormData) {
@@ -82,49 +144,10 @@ function showErrorsOnForm(errors: FormatedErrors, formData: FormData) {
   }
 }
 
-function formDataToFormatedObject(formData: FormData) {
-  const formObject: any = {}
-  formData.forEach((val, key) => (formObject[key] = val))
-
-  return formObject
+function sendReservation(reservation) {
+  // TODO: envoyer le mail à Charlotte + confirmation au client
 }
 
-function displayNextStepForm(
-  currentStepElement: HTMLElement,
-  nextStepElement: HTMLElement
-) {
-  currentStepElement.style.display = 'none'
-  nextStepElement.style.display = 'block'
-}
-
-function validateStepOne(form: Record<string, string>) {
-  try {
-    formOneSchema.validateSync(form, { abortEarly: false })
-  } catch (error) {
-    if (error instanceof ValidationError)
-      return formatErrorsFromValidationError(error)
-    else throw error
-  }
-}
-
-function validateStepTwo(formObject: Record<string, string>) {
-  try {
-    formTwoSchema.validateSync(formObject, { abortEarly: false })
-  } catch (error) {
-    if (error instanceof ValidationError)
-      return formatErrorsFromValidationError(error)
-    else throw error
-  }
-}
-
-function castDateFromString(date: string | Date) {
-  if (typeof date !== 'string') return
-  return new Date(
-    parseInt(date.split('/')[2]),
-    parseInt(date.split('/')[1]),
-    parseInt(date.split('/')[0])
-  )
-}
 /* 
   Transform the ValidationError object into 
   {
@@ -138,53 +161,3 @@ function formatErrorsFromValidationError(errors: ValidationError) {
   })
   return formatedErrors
 }
-
-function sendReservation(reservation) {
-  // TODO: envoyer le mail à Charlotte + confirmation au client
-}
-
-const formOneSchema = object({
-  date: date().required(),
-  heure: string()
-    .required()
-    .length(5)
-    .matches(/\d\d:\d\d/)
-    .test(
-      'is-hours',
-      'The given string does not match the format HH:MM (H is between the opening hours and M between 0 and 59',
-      (value) => {
-        const [hourStr, minStr] = value.split(':')
-        const [hour, min] = [parseInt(hourStr, 10), parseInt(minStr, 10)]
-
-        return (
-          hour >= opts.startHour && hour <= opts.endHour && min >= 0 && min < 60
-        )
-      }
-    ),
-  massage: string().required(),
-  cadeau: string(),
-})
-
-const formTwoSchema = object({
-  nom: string().required().max(30),
-  prenom: string().required().max(30),
-  email: string().email().required().max(30),
-  tel: string().required().max(15).matches(/\d*/),
-  localite: string().required(),
-  confidentialite: string()
-    .required()
-    .test(
-      'is-confidentailite',
-      'User have to accept confidantiality contract',
-      (val) => val === 'true'
-    ),
-  conditions_ventes: string()
-    .required()
-    .test(
-      'is-conditions_ventes',
-      'User have to accept service contract',
-      (val) => val === 'true'
-    ),
-})
-
-// TODO: Ajouter un bouton "back" pour passer de l'étape 2 à la 1?
