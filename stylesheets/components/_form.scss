@@ -1,0 +1,29 @@
+@use '../abstracts/' as *;
+
+.form {
+  &__group {
+    display: grid;
+  }
+
+  &__label {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 220px;
+    font-size: in-rem(18);
+    letter-spacing: 0.19688rem;
+  }
+
+  &__input {
+    width: 150px;
+    border: none;
+    border-bottom: 1px var(--clr-primary-750) solid;
+    background-color: transparent;
+    padding-inline: in-rem(8);
+    font-size: in-rem(16);
+    font-family: $text-font-stack;
+    color: inherit;
+    letter-spacing: 0.175rem;
+    text-align: center;
+  }
+}

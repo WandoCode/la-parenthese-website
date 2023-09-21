@@ -37,6 +37,7 @@ stepTwoFormBackBtn.onclick = (e) => {
 
 function handleStepOneFormSubmit(e) {
   e.preventDefault()
+
   const formData = new FormData(stepOneForm)
   if (!formData.get('cadeau')) formData.set('cadeau', 'false')
   const formObject = formDataToFormatedObject(formData)
