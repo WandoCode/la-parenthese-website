@@ -25,6 +25,14 @@
     }
   }
 
+  &__title {
+    margin-bottom: in-rem(48);
+
+    @include breakpoint('large') {
+      margin-bottom: in-rem(24);
+    }
+  }
+
   &__body {
     @include breakpoint('large') {
       display: grid;

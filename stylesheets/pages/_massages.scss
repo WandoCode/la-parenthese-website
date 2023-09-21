@@ -1,22 +1,8 @@
 @use '../abstracts/' as *;
 
 .massages {
-  & .h1 {
-    margin-bottom: in-rem(48);
-
-    @include breakpoint('large') {
-      margin-bottom: in-rem(24);
-    }
-  }
-
   &__list {
-    width: $main-width-sm;
-    margin-inline: auto;
-
     background-image: $text-background;
-
-    @include breakpoint('large') {
-      width: auto;
-    }
   }
 }
+// TODO: revoir le style de la pages massage en mobile (desktop ok?)

@@ -1,3 +1,5 @@
+@use '../abstracts/' as *;
+
 .reservation {
   &__step-two {
     display: none;

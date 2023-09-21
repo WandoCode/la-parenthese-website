@@ -83,25 +83,26 @@
         />
 
         <div class="main__content">
-          <h1 class="h1 h1--section">Réserver</h1>
+          <h1 class="h1 h1--section main__title">Réserver</h1>
           <img
             class="hide-desktop home__illustration main__illustration"
             src="./public/bottle-salt-sm.png"
             alt="Small bottle of essential oil on blue cristals with camomile and lavender"
           />
-          <div class="reservation__body">
+          <div class="reservation__body container">
             <!-- Start content here -->
             <section class="massage-choice reservation__step-one">
               <h2 class="h2 h2--section">Choix du massage</h2>
               <form
-                class="massage-choice__form"
+                class="form massage-choice__form"
                 id="massage-choice-form"
                 novalidate
               >
-                <div>
-                  <label for="date">
+                <div class="form__group">
+                  <label class="form__label" for="date">
                     Date
                     <input
+                      class="form__input"
                       type="text"
                       name="date"
                       id="date"
@@ -110,9 +111,10 @@
                       required
                     />
                   </label>
-                  <label for="heure">
+                  <label class="form__label" for="heure">
                     Heure
                     <input
+                      class="form__input"
                       type="text"
                       name="heure"
                       id="heure"
@@ -121,18 +123,18 @@
                       pattern="\d\d:\d\d"
                     />
                   </label>
-                  <label for="massage">
+                  <label class="form__label" for="massage">
                     Massage
                     <select name="massage" id="massage" required></select>
                   </label>
                 </div>
-                <div>
+                <div class="form__group">
                   <ul id="reservation-checkout">
                     <li>Massage <span>Choissiez un massage</span></li>
                     <li>Durée <span></span></li>
                     <li>Prix (TVAC) <span></span>€</li>
                   </ul>
-                  <label for="cadeau">
+                  <label class="form__label" for="cadeau">
                     <input
                       type="checkbox"
                       name="cadeau"
@@ -148,12 +150,12 @@
             <section class="client-infos reservation__step-two">
               <h2 class="h2 h2--section">Coordonées</h2>
               <form
-                class="client-infos__form"
+                class="form client-infos__form"
                 id="client-infos-form"
                 novalidate
               >
                 <div>
-                  <label for="nom">
+                  <label class="form__label" for="nom">
                     Nom
                     <input
                       type="text"
@@ -163,7 +165,7 @@
                       required
                     />
                   </label>
-                  <label for="prenom">
+                  <label class="form__label" for="prenom">
                     Prénom
                     <input
                       type="text"
@@ -173,7 +175,7 @@
                       required
                     />
                   </label>
-                  <label for="email">
+                  <label class="form__label" for="email">
                     Email
                     <input
                       type="email"
@@ -183,7 +185,7 @@
                       required
                     />
                   </label>
-                  <label for="tel">
+                  <label class="form__label" for="tel">
                     Tel.
                     <input
                       type="phone"
@@ -193,13 +195,13 @@
                       required
                     />
                   </label>
-                  <label for="localite">
+                  <label class="form__label" for="localite">
                     Localite
                     <select name="localite" id="localite" required />
                   </label>
                 </div>
                 <div>
-                  <label for="confidentialite">
+                  <label class="form__label" for="confidentialite">
                     <input
                       type="checkbox"
                       name="confidentialite"
@@ -213,7 +215,7 @@
                     d’informations, voir : Politique de confidentialité
                   </label>
 
-                  <label for="conditions_ventes">
+                  <label class="form__label" for="conditions_ventes">
                     <input
                       type="checkbox"
                       name="conditions_ventes"
@@ -235,16 +237,18 @@
                     confirmer le rendez-vous.
                   </p>
                 </div>
-                <button
-                  type="button"
-                  class="btn btn--secondary btn--sm"
-                  id="client-infos-form__back"
-                >
-                  Précédent
-                </button>
-                <button type="submit" class="btn btn--primary btn--sm">
-                  Réserver
-                </button>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn--secondary btn--sm"
+                    id="client-infos-form__back"
+                  >
+                    Précédent
+                  </button>
+                  <button type="submit" class="btn btn--primary btn--sm">
+                    Réserver
+                  </button>
+                </div>
               </form>
             </section>
             <section class="confirmation reservation__step-three">
