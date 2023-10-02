@@ -1,8 +1,13 @@
 @use '../abstracts/' as *;
 
 .reservation {
-  & h2 {
+  & h2,
+  .form__group {
     margin-bottom: in-rem(40);
+  }
+
+  & .form__group:nth-last-child(2) {
+    margin-bottom: in-rem(64);
   }
 
   &__step-two {

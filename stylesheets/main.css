@@ -986,7 +986,6 @@ body {
 }
 .form__label--checkbox {
   justify-content: flex-start;
-  gap: 1rem;
 }
 .form__input {
   flex-grow: 1;
@@ -1000,6 +999,34 @@ body {
   color: inherit;
   letter-spacing: 0.175rem;
   text-align: center;
+  border-radius: 2.5px;
+}
+.form__checkbox {
+  height: 0;
+  width: 0;
+}
+.form__checkbox ~ span {
+  min-height: 15px;
+  min-width: 15px;
+  background-color: white;
+  border: 1px var(--clr-primary-750) solid;
+  border-radius: 2px;
+  margin-right: 1rem;
+}
+.form__checkbox:checked ~ span {
+  position: relative;
+  background-color: var(--clr-primary-400);
+}
+.form__checkbox:checked ~ span:after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  height: 9px;
+  width: 6px;
+  transform: translateX(4px) translateY(1px) rotate(40deg);
+  background-color: transparent;
+  border-bottom: 2px white solid;
+  border-right: 2px white solid;
 }
 .home {
   display: flex;
@@ -1067,8 +1094,12 @@ body {
   background-image: linear-gradient(45deg, hsla(210, 27%, 96%, 0.6) 0%, hsla(210, 27%, 96%, 0.6) 100%);
 }
 
-.reservation h2 {
+.reservation h2,
+.reservation .form__group {
   margin-bottom: 2.5rem;
+}
+.reservation .form__group:nth-last-child(2) {
+  margin-bottom: 4rem;
 }
 .reservation__step-two {
   display: none;

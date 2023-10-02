@@ -15,7 +15,6 @@
 
     &--checkbox {
       justify-content: flex-start;
-      gap: 1rem;
     }
   }
 
@@ -32,8 +31,41 @@
     color: inherit;
     letter-spacing: 0.175rem;
     text-align: center;
+    border-radius: 2.5px;
   }
 
   &__checkbox {
+    height: 0;
+    width: 0;
+
+    & ~ span {
+      min-height: 15px;
+      min-width: 15px;
+      background-color: white;
+      border: 1px var(--clr-primary-750) solid;
+      border-radius: 2px;
+      margin-right: 1rem;
+    }
+
+    &:checked ~ span {
+      position: relative;
+
+      background-color: var(--clr-primary-400);
+
+      &:after {
+        position: absolute;
+        content: '';
+        inset: 0;
+        height: 9px;
+        width: 6px;
+        transform: translateX(4px) translateY(1px) rotate(40deg);
+        background-color: transparent;
+        border-bottom: 2px white solid;
+        border-right: 2px white solid;
+      }
+    }
+
+    &:checked:after {
+    }
   }
 }
