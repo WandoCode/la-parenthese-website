@@ -18,6 +18,7 @@
   --clr-neutral-200: #f9f6ef;
   --clr-neutral-300: #e9f2ff;
   --clr-neutral-400: #eff2f3;
+  --clr-error-400: hsl(6, 85%, 44%);
 }
 :root .fc-primary-300 {
   color: hsl(183, 35%, 52%);
@@ -63,6 +64,9 @@
 }
 :root .fc-neutral-400 {
   color: #eff2f3;
+}
+:root .fc-error-400 {
+  color: hsl(6, 85%, 44%);
 }
 
 :root {
@@ -128,6 +132,9 @@
   border: 1px var(--clr-primary-750) solid;
   min-height: 35px;
   padding: 0rem;
+}
+.choices__inner.invalid {
+  border-color: var(--clr-error-400);
 }
 .choices[data-type*=select-one] .choices__inner {
   padding-bottom: 0rem;
@@ -977,6 +984,9 @@ body {
   display: grid;
   gap: 0.5rem;
 }
+.form__group--large-gap {
+  gap: 1rem;
+}
 .form__label {
   display: flex;
   align-items: center;
@@ -986,6 +996,10 @@ body {
 }
 .form__label--checkbox {
   justify-content: flex-start;
+  letter-spacing: 0.1rem;
+}
+.form__label--small {
+  font-size: 14px;
 }
 .form__input {
   flex-grow: 1;
@@ -1001,15 +1015,24 @@ body {
   color: inherit;
   letter-spacing: 0.175rem;
 }
+.form__input:focus {
+  outline-color: var(--clr-primary-400);
+}
+.form__input.invalid {
+  border-color: var(--clr-error-400);
+}
 .form__checkbox {
   visibility: hidden;
   position: absolute;
   height: 0;
   width: 0;
 }
+.form__checkbox.invalid ~ span {
+  outline: 1px var(--clr-error-400) solid;
+}
 .form__checkbox ~ span {
-  min-height: 15px;
-  min-width: 15px;
+  min-height: 16px;
+  min-width: 16px;
   margin-right: 1rem;
   border: 1px var(--clr-primary-750) solid;
   border-radius: 2px;

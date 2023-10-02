@@ -4,6 +4,10 @@
   &__group {
     display: grid;
     gap: 0.5rem;
+
+    &--large-gap {
+      gap: 1rem;
+    }
   }
 
   &__label {
@@ -16,6 +20,11 @@
 
     &--checkbox {
       justify-content: flex-start;
+      letter-spacing: 0.1rem;
+    }
+
+    &--small {
+      font-size: 14px;
     }
   }
 
@@ -36,6 +45,14 @@
     font-family: $text-font-stack;
     color: inherit;
     letter-spacing: 0.175rem;
+
+    &:focus {
+      outline-color: var(--clr-primary-400);
+    }
+
+    &.invalid {
+      border-color: var(--clr-error-400);
+    }
   }
 
   &__checkbox {
@@ -46,9 +63,13 @@
     height: 0;
     width: 0;
 
+    &.invalid ~ span {
+      outline: 1px var(--clr-error-400) solid;
+    }
+
     & ~ span {
-      min-height: 15px;
-      min-width: 15px;
+      min-height: 16px;
+      min-width: 16px;
 
       margin-right: 1rem;
 

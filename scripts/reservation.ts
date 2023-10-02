@@ -25,13 +25,36 @@ function main() {
 }
 
 function initSelectLocalityField() {
-  const localiteEl = customerDetailsForm.elements['localite']
+  const localiteEl = customerDetailsForm.elements[
+    'localite'
+  ] as HTMLSelectElement
 
   const choices = new Choices(localiteEl, {
     choices: opts.localites,
     allowHTML: false,
     itemSelectText: '',
   })
+}
+
+function initSelectMassageField() {
+  const selectEl = massageChoiceForm.elements['massage'] as HTMLSelectElement
+
+  selectEl.addEventListener('change', handleSelectMassageChange)
+
+  const choices = new Choices(selectEl, {
+    choices: opts.massages,
+    allowHTML: false,
+    searchEnabled: false,
+    itemSelectText: '',
+  })
+
+  const massageValue = getMassageFromURLParams()
+  const massage = getMassageFromMassageValue(massageValue)
+
+  if (massage) {
+    choices.setChoiceByValue(massage.value)
+    showMassageShort(massage)
+  }
 }
 
 function initDateTimePickers() {
@@ -84,27 +107,6 @@ function getMassageFromURLParams() {
   const massage = params.get('massage')
 
   return massage
-}
-
-function initSelectMassageField() {
-  const selectEl = massageChoiceForm.elements['massage'] as HTMLSelectElement
-
-  selectEl.addEventListener('change', handleSelectMassageChange)
-
-  const choices = new Choices(selectEl, {
-    choices: opts.massages,
-    allowHTML: false,
-    searchEnabled: false,
-    itemSelectText: '',
-  })
-
-  const massageValue = getMassageFromURLParams()
-  const massage = getMassageFromMassageValue(massageValue)
-
-  if (massage) {
-    choices.setChoiceByValue(massage.value)
-    showMassageShort(massage)
-  }
 }
 
 function handleSelectMassageChange(e: Event) {

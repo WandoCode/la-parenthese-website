@@ -64,7 +64,7 @@ function handleStepTwoFormSubmit(e) {
     formData.set('conditions_ventes', 'false')
 
   const formObject = formDataToFormatedObject(formData)
-
+  console.log(formObject)
   const errors = validateStepTwo(formObject)
   if (errors) return showErrorsOnForm(errors, formData)
 
@@ -120,14 +120,20 @@ function displayNextStepForm(
 function showErrorsOnForm(errors: FormatedErrors, formData: FormData) {
   for (const fieldName of formData.keys()) {
     const fieldElement = document.getElementsByName(fieldName)[0]
+
+    // Catch choices elements that are styled if needed
+    const element = fieldElement.classList.contains('choices__input')
+      ? fieldElement.parentElement
+      : fieldElement
+
     if (Object.keys(errors).includes(fieldName)) {
       const errorMessage = errors[fieldName]
 
-      fieldElement.classList.add('invalid')
-      fieldElement.setAttribute('data-error', errorMessage)
+      element?.classList.add('invalid')
+      element?.setAttribute('data-error', errorMessage)
     } else {
-      fieldElement.classList.remove('invalid')
-      fieldElement.removeAttribute('data-error')
+      element?.classList.remove('invalid')
+      element?.removeAttribute('data-error')
     }
   }
 }

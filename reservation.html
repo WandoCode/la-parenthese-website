@@ -114,7 +114,7 @@
                   <label class="form__label" for="heure">
                     Heure
                     <input
-                      class="form__input"
+                      class="form__input form__input--error"
                       type="text"
                       name="heure"
                       id="heure"
@@ -133,7 +133,7 @@
                   <ul class="reservation__checkout" id="reservation-checkout">
                     <li>Massage <span>Choissiez un massage</span></li>
                     <li>Durée <span></span></li>
-                    <li>Prix (TVAC) <span>€</span></li>
+                    <li>Prix (TVAC) <span></span></li>
                   </ul>
                 </div>
                 <div class="form__group">
@@ -205,13 +205,15 @@
                     />
                   </label>
                   <label class="form__label" for="localite">
-                    Localite
-                    <select name="localite" id="localite" required />
+                    Localité
+                    <select name="localite" id="localite" required>
+                      <option value=""></option>
+                    </select>
                   </label>
                 </div>
-                <div class="form__group">
+                <div class="form__group form__group--large-gap">
                   <label
-                    class="form__label form__label--checkbox"
+                    class="form__label form__label--checkbox form__label--small"
                     for="confidentialite"
                   >
                     <input
@@ -223,14 +225,13 @@
                       required
                     />
                     <span></span>
-                    En soumettant ce formulaire, j’accepte que les informations
-                    saisies soient utilisées dans le cadre de cette réservation
-                    et de la prestation de service qui y est liée. Pour plus
-                    d’informations, voir : Politique de confidentialité
+                    J’accepte que mes informations soient utilisées dans le
+                    cadre de cette réservation et de la prestation de service
+                    liée. Voir politique de confidentialité.
                   </label>
 
                   <label
-                    class="form__label form__label--checkbox"
+                    class="form__label form__label--checkbox form__label--small"
                     for="conditions_ventes"
                   >
                     <input
@@ -242,8 +243,7 @@
                       required
                     />
                     <span></span>
-                    En soumettant ce formulaire, j’accepte les conditions
-                    d’utilisations.
+                    J’accepte les conditions d’utilisations.
                   </label>
                 </div>
                 <div class="form__group">
