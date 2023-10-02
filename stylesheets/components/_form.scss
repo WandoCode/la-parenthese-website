@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     font-size: in-rem(18);
     letter-spacing: 0.19688rem;
 
@@ -20,33 +21,41 @@
 
   &__input {
     flex-grow: 1;
+
     max-width: 70%;
     min-height: $input-height-sm;
 
-    border: 1px var(--clr-primary-750) solid;
-    background-color: #f9f9f9;
     padding-inline: in-rem(8);
+
+    border: 1px var(--clr-primary-750) solid;
+    border-radius: 2.5px;
+
+    background-color: #f9f9f9;
     font-size: in-rem(16);
+    text-align: center;
     font-family: $text-font-stack;
     color: inherit;
     letter-spacing: 0.175rem;
-    text-align: center;
-    border-radius: 2.5px;
   }
 
   &__checkbox {
+    visibility: hidden;
+
     position: absolute;
+
     height: 0;
     width: 0;
-    visibility: hidden;
 
     & ~ span {
       min-height: 15px;
       min-width: 15px;
-      background-color: white;
+
+      margin-right: 1rem;
+
       border: 1px var(--clr-primary-750) solid;
       border-radius: 2px;
-      margin-right: 1rem;
+
+      background-color: white;
     }
 
     &:checked ~ span {
@@ -58,12 +67,16 @@
         position: absolute;
         content: '';
         inset: 0;
+
         height: 9px;
         width: 6px;
+
         transform: translateX(4px) translateY(1px) rotate(40deg);
-        background-color: transparent;
+
         border-bottom: 2px white solid;
         border-right: 2px white solid;
+
+        background-color: transparent;
       }
     }
   }

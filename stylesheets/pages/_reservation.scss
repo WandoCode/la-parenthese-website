@@ -17,4 +17,25 @@
   &__step-three {
     display: none;
   }
+
+  &__checkout {
+    max-width: 400px;
+
+    & > li {
+      color: var(--clr-primary-700);
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 171.5%; /* 27.44px */
+      letter-spacing: 2.8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    & > li span {
+      color: var(--clr-primary-800);
+      font-style: italic;
+      font-weight: normal;
+      margin-left: 1rem;
+    }
+  }
 }

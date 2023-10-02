@@ -991,29 +991,29 @@ body {
   flex-grow: 1;
   max-width: 70%;
   min-height: 35px;
-  border: 1px var(--clr-primary-750) solid;
-  background-color: #f9f9f9;
   padding-inline: 0.5rem;
+  border: 1px var(--clr-primary-750) solid;
+  border-radius: 2.5px;
+  background-color: #f9f9f9;
   font-size: 1rem;
+  text-align: center;
   font-family: "Arsenal", sans-serif;
   color: inherit;
   letter-spacing: 0.175rem;
-  text-align: center;
-  border-radius: 2.5px;
 }
 .form__checkbox {
+  visibility: hidden;
   position: absolute;
   height: 0;
   width: 0;
-  visibility: hidden;
 }
 .form__checkbox ~ span {
   min-height: 15px;
   min-width: 15px;
-  background-color: white;
+  margin-right: 1rem;
   border: 1px var(--clr-primary-750) solid;
   border-radius: 2px;
-  margin-right: 1rem;
+  background-color: white;
 }
 .form__checkbox:checked ~ span {
   position: relative;
@@ -1026,9 +1026,9 @@ body {
   height: 9px;
   width: 6px;
   transform: translateX(4px) translateY(1px) rotate(40deg);
-  background-color: transparent;
   border-bottom: 2px white solid;
   border-right: 2px white solid;
+  background-color: transparent;
 }
 
 .home {
@@ -1109,6 +1109,24 @@ body {
 }
 .reservation__step-three {
   display: none;
+}
+.reservation__checkout {
+  max-width: 400px;
+}
+.reservation__checkout > li {
+  color: var(--clr-primary-700);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 171.5%; /* 27.44px */
+  letter-spacing: 2.8px;
+  display: flex;
+  justify-content: space-between;
+}
+.reservation__checkout > li span {
+  color: var(--clr-primary-800);
+  font-style: italic;
+  font-weight: normal;
+  margin-left: 1rem;
 }
 
 .container {

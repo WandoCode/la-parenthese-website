@@ -28,17 +28,17 @@ const reservationOptions: ReservationOptions = {
     {
       label: 'Cinq continents',
       value: 'massage1',
-      customProperties: { duration: '1h30', price: 90 },
+      customProperties: { duration: '1h30', price: '90€' },
     },
     {
       label: 'Power legs',
       value: 'massage2',
-      customProperties: { duration: '1h', price: 65 },
+      customProperties: { duration: '1h', price: '65€' },
     },
     {
       label: 'Power legs + booty',
       value: 'massage3',
-      customProperties: { duration: '1h20', price: 85 },
+      customProperties: { duration: '1h20', price: '85€' },
     },
   ],
   localites: [
