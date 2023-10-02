@@ -15,16 +15,8 @@
     align-items: center;
     justify-content: space-between;
 
-    font-size: in-rem(18);
-    letter-spacing: 0.19688rem;
-
     &--checkbox {
       justify-content: flex-start;
-      letter-spacing: 0.1rem;
-    }
-
-    &--small {
-      font-size: 14px;
     }
   }
 

@@ -107,6 +107,17 @@ body {
   }
 }
 
+.text-details {
+  letter-spacing: 0.1rem;
+  line-height: 1.15;
+  font-size: 14px;
+}
+
+.text-label {
+  font-size: in-rem(18);
+  letter-spacing: 0.19688rem;
+}
+
 .massage__main-btn {
   font-size: calc(0.875rem + 1.6vw);
   line-height: 171.5%; /* 2.14375rem */

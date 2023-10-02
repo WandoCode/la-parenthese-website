@@ -99,7 +99,7 @@
                 novalidate
               >
                 <div class="form__group">
-                  <label class="form__label" for="date">
+                  <label class="form__label text-label" for="date">
                     Date
                     <input
                       class="form__input"
@@ -111,7 +111,7 @@
                       required
                     />
                   </label>
-                  <label class="form__label" for="heure">
+                  <label class="form__label text-label" for="heure">
                     Heure
                     <input
                       class="form__input form__input--error"
@@ -123,7 +123,7 @@
                       pattern="\d\d:\d\d"
                     />
                   </label>
-                  <label class="form__label" for="massage">
+                  <label class="form__label text-label" for="massage">
                     Massage
                     <select name="massage" id="massage" required></select>
                   </label>
@@ -137,7 +137,10 @@
                   </ul>
                 </div>
                 <div class="form__group">
-                  <label class="form__label form__label--checkbox" for="cadeau">
+                  <label
+                    class="form__label text-label form__label--checkbox"
+                    for="cadeau"
+                  >
                     <input
                       class="form__checkbox"
                       type="checkbox"
@@ -160,7 +163,7 @@
                 novalidate
               >
                 <div class="form__group">
-                  <label class="form__label" for="nom">
+                  <label class="form__label text-label" for="nom">
                     Nom
                     <input
                       class="form__input"
@@ -171,7 +174,7 @@
                       required
                     />
                   </label>
-                  <label class="form__label" for="prenom">
+                  <label class="form__label text-label" for="prenom">
                     Prénom
                     <input
                       class="form__input"
@@ -182,7 +185,7 @@
                       required
                     />
                   </label>
-                  <label class="form__label" for="email">
+                  <label class="form__label text-label" for="email">
                     Email
                     <input
                       class="form__input"
@@ -193,7 +196,7 @@
                       required
                     />
                   </label>
-                  <label class="form__label" for="tel">
+                  <label class="form__label text-label" for="tel">
                     Tel.
                     <input
                       class="form__input"
@@ -204,7 +207,7 @@
                       required
                     />
                   </label>
-                  <label class="form__label" for="localite">
+                  <label class="form__label text-label" for="localite">
                     Localité
                     <select name="localite" id="localite" required>
                       <option value=""></option>
@@ -213,7 +216,7 @@
                 </div>
                 <div class="form__group form__group--large-gap">
                   <label
-                    class="form__label form__label--checkbox form__label--small"
+                    class="form__label form__label--checkbox text-details"
                     for="confidentialite"
                   >
                     <input
@@ -231,7 +234,7 @@
                   </label>
 
                   <label
-                    class="form__label form__label--checkbox form__label--small"
+                    class="form__label form__label--checkbox text-details"
                     for="conditions_ventes"
                   >
                     <input
@@ -247,11 +250,11 @@
                   </label>
                 </div>
                 <div class="form__group">
-                  <p>
+                  <p class="text-details">
                     En cliquant sur “Réserver”, votre demande sera soumise à la
                     masseuse.
                   </p>
-                  <p>
+                  <p class="text-details">
                     Elle vous contactera personnellement prochainement afin de
                     confirmer le rendez-vous.
                   </p>
