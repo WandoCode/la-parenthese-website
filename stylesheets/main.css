@@ -1002,8 +1002,10 @@ body {
   border-radius: 2.5px;
 }
 .form__checkbox {
+  position: absolute;
   height: 0;
   width: 0;
+  visibility: hidden;
 }
 .form__checkbox ~ span {
   min-height: 15px;
@@ -1028,6 +1030,7 @@ body {
   border-bottom: 2px white solid;
   border-right: 2px white solid;
 }
+
 .home {
   display: flex;
   flex-direction: column;
