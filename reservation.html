@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/main.css" />
     <script src="./scripts/app.ts" defer type="module"></script>
     <script src="./scripts/reservation.ts" defer type="module"></script>
     <script src="./scripts/reservation-form.ts" defer type="module"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
     <title>Réserver - La Parenthèse Enchantée</title>
   </head>
   <body>
@@ -134,8 +134,9 @@
                     <li>Durée <span></span></li>
                     <li>Prix (TVAC) <span></span>€</li>
                   </ul>
-                  <label class="form__label" for="cadeau">
+                  <label class="form__label form__label--checkbox" for="cadeau">
                     <input
+                      class="form__checkbox"
                       type="checkbox"
                       name="cadeau"
                       id="cadeau"
@@ -154,10 +155,11 @@
                 id="client-infos-form"
                 novalidate
               >
-                <div>
+                <div class="form__group">
                   <label class="form__label" for="nom">
                     Nom
                     <input
+                      class="form__input"
                       type="text"
                       name="nom"
                       id="nom"
@@ -168,6 +170,7 @@
                   <label class="form__label" for="prenom">
                     Prénom
                     <input
+                      class="form__input"
                       type="text"
                       name="prenom"
                       id="prenom"
@@ -178,6 +181,7 @@
                   <label class="form__label" for="email">
                     Email
                     <input
+                      class="form__input"
                       type="email"
                       name="email"
                       id="email"
@@ -188,6 +192,7 @@
                   <label class="form__label" for="tel">
                     Tel.
                     <input
+                      class="form__input"
                       type="phone"
                       name="tel"
                       id="tel"
@@ -201,8 +206,12 @@
                   </label>
                 </div>
                 <div>
-                  <label class="form__label" for="confidentialite">
+                  <label
+                    class="form__label form__label--checkbox"
+                    for="confidentialite"
+                  >
                     <input
+                      class="form__checkbox"
                       type="checkbox"
                       name="confidentialite"
                       id="confidentialite"
@@ -215,8 +224,12 @@
                     d’informations, voir : Politique de confidentialité
                   </label>
 
-                  <label class="form__label" for="conditions_ventes">
+                  <label
+                    class="form__label form__label--checkbox"
+                    for="conditions_ventes"
+                  >
                     <input
+                      class="form__checkbox"
                       type="checkbox"
                       name="conditions_ventes"
                       id="conditions_ventes"

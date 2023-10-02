@@ -73,6 +73,11 @@ body {
   @include breakpoint('large') {
     letter-spacing: 0.24rem;
   }
+
+  &--section {
+    font-style: italic;
+    font-weight: 700;
+  }
 }
 
 .text-xs {

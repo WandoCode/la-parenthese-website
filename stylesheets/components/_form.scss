@@ -3,27 +3,37 @@
 .form {
   &__group {
     display: grid;
+    gap: 0.5rem;
   }
 
   &__label {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
-    width: 220px;
     font-size: in-rem(18);
     letter-spacing: 0.19688rem;
+
+    &--checkbox {
+      justify-content: flex-start;
+      gap: 1rem;
+    }
   }
 
   &__input {
-    width: 150px;
-    border: none;
-    border-bottom: 1px var(--clr-primary-750) solid;
-    background-color: transparent;
+    flex-grow: 1;
+    max-width: 70%;
+    min-height: $input-height-sm;
+
+    border: 1px var(--clr-primary-750) solid;
+    background-color: #f9f9f9;
     padding-inline: in-rem(8);
     font-size: in-rem(16);
     font-family: $text-font-stack;
     color: inherit;
     letter-spacing: 0.175rem;
     text-align: center;
+  }
+
+  &__checkbox {
   }
 }

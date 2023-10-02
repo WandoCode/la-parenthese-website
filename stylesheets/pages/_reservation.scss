@@ -1,6 +1,10 @@
 @use '../abstracts/' as *;
 
 .reservation {
+  & h2 {
+    margin-bottom: in-rem(40);
+  }
+
   &__step-two {
     display: none;
   }
